@@ -15,7 +15,7 @@ const Header = () => {
         <span className='rounded-full bg-green-400'><img src={ProfileImage} alt="" /></span>
         <span>Sanni Ahmed Agboola</span>
         <span><CiSearch className='text-[1.7rem] font-[500]'/></span>
-        <span className='relative'><FaRegBell className='text-[1.7rem] font-[500]'/><span className='absolute -bottom-1 bg-red-600 rounded-full text-[.8rem] font-[700] px-[.32rem] text-white right-0'>1</span></span>
+        <span className='relative'><FaRegBell className='text-[1.7rem] font-[500]'/><span className='absolute -bottom-1 bg-red-600 rounded-full text-[.75rem] font-[700] px-[.32rem] text-white right-0'>1</span></span>
       </div>
     </div>
   )
