@@ -1,4 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+// import Piechart from '../../component/charts/Piechart'
+import { Component } from '../../component/charts/Piechart'
 
 const summaryData = [
   {id: 1, title: 'Total Balance', amount: 'N200,000'},
@@ -7,9 +10,9 @@ const summaryData = [
 ]
 
 export const Summary = () =>(
-  <ul className='flex items-center gap-6'>
+  <ul className='flex items-center gap-6 justify-center flex-wrap xl:justify-start xl:flex-nowrap'>
     {summaryData.map((data, index) =>(
-      <li className='w-[15.5rem] flex flex-col items-center justify-center gap-2 p-6 px-10 rounded-xl border-[1px] border-gray-200'>
+      <li key={index} className='w-[15.5rem] flex flex-col items-center justify-center gap-2 p-6 px-10 rounded-xl border-[1px] border-gray-200'>
         <span className='font-[400] text-[14px]'>{data.title}</span><span className='font-[600] text-[30px]'>{data.amount}</span>
       </li>
     ))}
@@ -24,21 +27,39 @@ const Dashboard = () => {
         <p className='text-[1.3rem] font-[600] mb-4'>User Summary</p>
         <Summary />
       </section>
-      <section>
-        <div>
-          <p className='text-[1.3rem] font-[600] mb-4'>User Summary</p>
-          <div>
-            <select name="" id="">
+      <section className='bg-white rounded-lg p-8 mt-8'>
+        <div className='flex items-center justify-between'>
+          <p className='text-[1.3rem] font-[600] mb-4'>Current Statistics</p>
+          <div className='flex items-center gap-2'>
+            <select name="" id="" className='rounded-lg border-[1px] border-gray-200 outline-none'>
               <option value="">Cashflow</option>
               <option value=""></option>
             </select>
-            <select name="" id="">
+            <select name="" id="" className='rounded-lg border-s[1px] border-gray-200 outline-none'>
               <option value="">Monthly</option>
               <option value=""></option>
             </select>
           </div>
         </div>
-
+        <div className='flex items-center justify-between p-4'>
+          <Component />
+            <ul className='flex flex-col gap-[.5rem] text-[18px]'>
+              <li className='list'>Payment Withdrawal</li>
+              <li className='list'>Withdrawal Comleted</li>
+              <li className='list'>Cash Added</li>
+            </ul> 
+        </div>
+        <div className='flex items-center justify-end gap-[.9rem] text-[16px]'>
+          <div className='flex gap-[.9rem] items-center'>
+            <input type="checkbox" checked name="" id="" /><label htmlFor="">Cash Withdrawal</label>
+          </div>
+          <div className='flex gap-[.9rem] items-center'>
+            <input type="checkbox" name="" id="" /><label htmlFor="">Send</label>
+          </div>
+          <div className='flex gap-[.9rem] items-center'>
+            <input type="checkbox" name="" id="" /><label htmlFor="">Receive</label>
+          </div>
+        </div>
       </section>
     </div>
   )

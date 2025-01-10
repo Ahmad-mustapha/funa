@@ -8,6 +8,8 @@ import { GoPeople } from "react-icons/go";
 import { IoSettingsOutline } from "react-icons/io5";
 import { BiLogOut } from "react-icons/bi";
 import { TbTransform } from "react-icons/tb";
+import './sidebar.css'
+
 const navLinks = [
   {id: 1, text: 'Dashboard', icon: <MdOutlineDashboard />, link: '/'},
   {id: 2, text: 'Transaction', icon: <TbTransform />, link: '/transaction'},
@@ -21,7 +23,7 @@ const navLinks = [
 
 const Sidebar = () => {
   return (
-    <div className='flex items-start flex-col px-6 py-[.8rem]'>
+    <div id='sidebar' className='flex items-start flex-col px-6 py-[.8rem]'>
       <div className='flex items-center gap-2'>
         <div><img src={Profileimage2} alt="" /></div>
         <p className='font-[700] text-[1.3rem]'>Sanni Ahmed</p>

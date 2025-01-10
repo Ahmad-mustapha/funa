@@ -7,7 +7,7 @@ import { FaRegBell } from "react-icons/fa6";
 
 const Header = () => {
   return (
-    <div className='h-[5rem] bg-white shadow-md fixed w-full top-0 py-6 px-16 flex items-center justify-between'>
+    <div className='z-50 h-[5rem] bg-white shadow-md fixed w-full top-0 py-6 px-16 flex items-center justify-between'>
       <div><img src={Logo} alt="" /></div>
       <div><h1 className='font-[700] text-[1.3rem]'>Dashboard</h1></div>
       <div></div>

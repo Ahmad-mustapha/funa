@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 export function Card({ className, children }) {
-  return <div className={classNames("bg-white shadow-md rounded-lg", className)}>{children}</div>;
+  return <div className={classNames("", className)}>{children}</div>;
 }
 
 export function CardHeader({ className, children }) {
@@ -18,7 +18,7 @@ export function CardDescription({ children }) {
 }
 
 export function CardContent({ className, children }) {
-  return <div className={classNames("p-4", className)}>{children}</div>;
+  return <div className={classNames("", className)}>{children}</div>;
 }
 
 export function CardFooter({ className, children }) {

@@ -10,6 +10,13 @@ export default {
       fontFamily: {
         sans: ["Inter", ...fontFamily.sans],
       },
+      colors: {
+        chrome: "#4285f4",
+        safari: "#ff9800",
+        firefox: "#ff5722",
+        edge: "#00bcd4",
+        other: "#9e9e9e",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms"), require("tailwindcss-animate")],

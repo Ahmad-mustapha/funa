@@ -1,0 +1,84 @@
+nav{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    position: sticky;
+    border-right: 1px solid #CECFDA;
+    gap: 2rem;
+}
+nav .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+}
+.menuSidebar{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    height: 100vh;
+    background-color: white;
+    padding: 1.5rem;
+    width: 300px;
+}
+.show {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 300px;
+    right: 700px;
+    left: 0;
+    background-color: white;
+    height: 100vh;
+    top: 5rem;
+    padding: 1.5rem;
+    z-index: 1100; /* Ensure it's above the overlay */
+}
+
+.hidden{
+    display: none;
+}
+.overlay{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 5rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+@media screen and (max-width: 1023px) {
+    #sidebar{
+        display: none;
+    }
+    nav{
+        border-right: none;
+        height: 5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+    }
+}
