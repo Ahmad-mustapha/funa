@@ -11,3 +11,17 @@ a {
 body{
   @apply bg-[#f5f5f5]
 }
+
+:root {
+  --color-chrome: #4285f4;
+  --color-safari: #007aff;
+  --color-firefox: #ff7139;
+  --color-edge: #0078d7;
+  --color-other: #9e9e9e;
+
+  --chart-1: 210, 90%, 60%;
+  --chart-2: 220, 80%, 60%;
+  --chart-3: 30, 70%, 55%;
+  --chart-4: 190, 75%, 55%;
+  --chart-5: 0, 0%, 60%;
+}

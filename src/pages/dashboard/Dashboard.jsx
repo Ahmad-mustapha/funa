@@ -24,6 +24,22 @@ const Dashboard = () => {
         <p className='text-[1.3rem] font-[600] mb-4'>User Summary</p>
         <Summary />
       </section>
+      <section>
+        <div>
+          <p className='text-[1.3rem] font-[600] mb-4'>User Summary</p>
+          <div>
+            <select name="" id="">
+              <option value="">Cashflow</option>
+              <option value=""></option>
+            </select>
+            <select name="" id="">
+              <option value="">Monthly</option>
+              <option value=""></option>
+            </select>
+          </div>
+        </div>
+
+      </section>
     </div>
   )
 }
