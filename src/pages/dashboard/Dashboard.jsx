@@ -31,11 +31,11 @@ const Dashboard = () => {
         <div className='flex items-center justify-between'>
           <p className='text-[1.3rem] font-[600] mb-4'>Current Statistics</p>
           <div className='flex items-center gap-2'>
-            <select name="" id="" className='rounded-lg border-[1px] border-gray-200 outline-none'>
+            <select name="" id="" className='rounded-lg py-1 px-3 border-[1px] border-gray-200 outline-none'>
               <option value="">Cashflow</option>
               <option value=""></option>
             </select>
-            <select name="" id="" className='rounded-lg border-s[1px] border-gray-200 outline-none'>
+            <select name="" id="" className='rounded-lg py-1 px-3 border-[1px] border-gray-200 outline-none'>
               <option value="">Monthly</option>
               <option value=""></option>
             </select>
@@ -51,13 +51,19 @@ const Dashboard = () => {
         </div>
         <div className='flex items-center justify-end gap-[.9rem] text-[16px]'>
           <div className='flex gap-[.9rem] items-center'>
-            <input type="checkbox" checked name="" id="" /><label htmlFor="">Cash Withdrawal</label>
+            <input 
+            className='w-6 h-6 rounded-full border-2 border-gray-700 appearance-none checked:bg-green-500 checked:border-green-500'
+            type="checkbox" checked name="" id="" /><label htmlFor="">Cash Withdrawal</label>
           </div>
           <div className='flex gap-[.9rem] items-center'>
-            <input type="checkbox" name="" id="" /><label htmlFor="">Send</label>
+            <input 
+            className='w-6 h-6 rounded-full border-2 border-gray-700 appearance-none checked:bg-green-500 checked:border-green-500'
+            type="checkbox" name="" id="" /><label htmlFor="">Send</label>
           </div>
           <div className='flex gap-[.9rem] items-center'>
-            <input type="checkbox" name="" id="" /><label htmlFor="">Receive</label>
+            <input 
+            className='w-5 h-5 rounded-full border-2 border-gray-700 appearance-none checked:bg-green-500 checked:border-green-500'
+            type="checkbox" name="" id="" /><label htmlFor="">Receive</label>
           </div>
         </div>
       </section>

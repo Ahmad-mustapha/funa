@@ -25,7 +25,6 @@
 .list:last-child::before{
     background-color: #2C8CFB;
 }
-input[type = checkbox]{
+input[type = "checkbox"]{
     border-radius: 5px;
-    padding: 10px;
 }
