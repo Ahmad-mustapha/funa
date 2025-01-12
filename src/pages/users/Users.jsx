@@ -76,7 +76,7 @@ const Users = () => {
               <th className='flex items-center gap-2 pb-3'>Action <IoFilterSharp /></th>
               <th className='flex items-center gap-2 pb-3'>View <IoFilterSharp /></th>
             </tr>
-            <tr className='flex items-center justify-between border-t-[1px] border-slate-300 py-3 w-full'>
+            <tr className='flex items-center justify-between py-3 w-full'>
               <td>Customer</td>
               <td>Date</td>
               <td>Document Type</td>

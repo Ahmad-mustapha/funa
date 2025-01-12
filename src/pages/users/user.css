@@ -1,0 +1,12 @@
+/* tr{
+    @apply border-t-[1px] border-slate-300 py-3 w-full
+}
+th{
+    @apply flex items-center gap-2 text-[14px]
+}
+td{
+    @apply text-[14px]
+}
+th, td{
+    text-align: left;
+} */

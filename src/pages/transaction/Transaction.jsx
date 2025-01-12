@@ -5,8 +5,17 @@ import { FiSearch } from "react-icons/fi";
 import { IoFilterSharp } from "react-icons/io5";
 import { BsEye } from "react-icons/bs";
 import './transaction.css'
+import { Link, NavLink, useLocation } from 'react-router-dom';
+const tracsactData = [
+  { id: 1, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N2C8CFB' },
+  { id: 2, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N2C8CFB' },
+  { id: 3, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N2C8CFB' },
+  { id: 4, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N2C8CFB' },
+  { id: 5, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N2C8CFB' }
+]
 
 const Transaction = () => {
+  const { id } = useLocation()
   return (
     <>
       <section className='mt-6 bg-white rounded-xl p-4'>
@@ -28,20 +37,26 @@ const Transaction = () => {
           </div>
         </div>
         <table className='w-full mt-6'>
-            <tr className='flex items-center justify-between bg-[#F9FBFC] rounded-[100px] px-6 border-0'>
-              <th>Customer</th>
-              <th>Date</th>
-              <th>Document Type</th>
-              <th>Action</th>
-              <th>View</th>
+            <tr className='flex items-center justify-between bg-[#F9FBFC] rounded-[100px] px-6 p-[.8rem] border-0'>
+              <th>Transact ID</th>
+              <th>Sourse Acct</th>
+              <th>Destination Acct Type</th>
+              <th>Amout</th>
+              <th></th>
             </tr>
-            <tr className='row flex items-center justify-between px-6'>
-              <td>Customer</td>
-              <td>Date</td>
-              <td>Document Type</td>
-              <td>Action</td>
-              <td>View</td>
-            </tr>
+            <tbody>
+              {tracsactData.map((data, index) =>(
+                <NavLink to={`/transaction/${data.id}`}>
+                  <tr key={index} className='row flex items-center justify-between px-6'>
+                    <td>{data.transactId}</td>
+                    <td>{data.sourceAcc}</td>
+                    <td>{data.DestinAcc}</td>
+                    <td>{data.amount}</td>
+                    <td className='font-[700] text-[1.1rem]'>...</td>
+                  </tr>
+                </NavLink>
+              ))}
+            </tbody>
         </table>
       </section>
       
