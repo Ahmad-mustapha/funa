@@ -9,14 +9,14 @@ import { IoFilterSharp } from "react-icons/io5";
 import { BsEye } from "react-icons/bs";
 import './user.css'
 
-const userData = [
+const kycData = [
   { id: 1, title: 'Total Subscription', num: 207, image: Trans },
-  { id: 1, title: 'Approved', num: 207, image: Checkfill },
-  { id: 1, title: 'Rejected', num: 207, image: Cancel }
+  { id: 2, title: 'Approved', num: 207, image: Checkfill },
+  { id: 3, title: 'Rejected', num: 207, image: Cancel }
 ]
 const EachUserData = () =>(
   <div className='flex items-center gap-6 justify-center flex-wrap xl:justify-start xl:flex-nowrap'>
-    { userData.map((data, index) =>(
+    { kycData.map((data, index) =>(
       <div key={index} className='w-[15.5rem] flex items-center gap-4 bg-white p-4 rounded-xl'>
         <div className='p-2 rounded-xl'
           style={{
@@ -68,28 +68,30 @@ const Users = () => {
             </div>
           </div>
         </div>
-        <table className='w-full mt-6'>
-            <tr className='flex items-center justify-between '>
-              <th className='flex items-center gap-2 pb-3'>Customer <IoFilterSharp /></th>
-              <th className='flex items-center gap-2 pb-3'>Date <IoFilterSharp /></th>
-              <th className='flex items-center gap-2 pb-3'>Document Type <IoFilterSharp /></th>
-              <th className='flex items-center gap-2 pb-3'>Action <IoFilterSharp /></th>
-              <th className='flex items-center gap-2 pb-3'>View <IoFilterSharp /></th>
-            </tr>
-            <tr className='flex items-center justify-between py-3 w-full'>
-              <td>Customer</td>
-              <td>Date</td>
-              <td>Document Type</td>
-              <td>
-                <select name="" id="" className='border-[1px] border-slate-300 rounded-md p-[] outline-none'>
-                  <option value="">Approved</option>
-                  <option value="">Processing</option>
-                  <option value="">Rejected</option>
-                </select>
-              </td>
-              <td className='flex items-center gap-2'><BsEye className='text-[1.2rem]'/> View</td>
-            </tr>
-        </table>
+        <section className='mt-6 overflow-x-auto lg:overflow-x-hidden'>
+          <table className='w-full'>
+              <tr className='flex items-center justify-between '>
+                <th className='flex items-center gap-2 pb-3'>Customer <IoFilterSharp /></th>
+                <th className='flex items-center gap-2 pb-3'>Date <IoFilterSharp /></th>
+                <th className='flex items-center gap-2 pb-3'>Document Type <IoFilterSharp /></th>
+                <th className='flex items-center gap-2 pb-3'>Action <IoFilterSharp /></th>
+                <th className='flex items-center gap-2 pb-3'>View <IoFilterSharp /></th>
+              </tr>
+              <tr className='flex items-center justify-between py-3 w-full'>
+                <td>Customer</td>
+                <td>12 Aug 2022 - 12:25 am</td>
+                <td>Drivers License</td>
+                <td>
+                  <select name="" id="" className='border-[1px] border-slate-300 rounded-md p-[] outline-none'>
+                    <option value="">Approved</option>
+                    <option value="">Processing</option>
+                    <option value="">Rejected</option>
+                  </select>
+                </td>
+                <td className='flex items-center gap-2'><BsEye className='text-[1.2rem]'/> View</td>
+              </tr>
+          </table>
+        </section>
       </section>
       
     </div>

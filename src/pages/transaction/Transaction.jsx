@@ -36,31 +36,33 @@ const Transaction = () => {
             </div>
           </div>
         </div>
-        <table className='w-full mt-6'>
-            <tr className='flex items-center justify-between bg-[#F9FBFC] rounded-[100px] px-6 p-[.8rem] border-0'>
-              <th>Transact ID</th>
-              <th>Sourse Acct</th>
-              <th>Destination Acct Type</th>
-              <th>Amout</th>
-              <th></th>
-            </tr>
-            <tbody>
-              {tracsactData.map((data, index) =>(
-                <NavLink 
-                to={`/transaction/${data.id}`}
-                state={{transactId: data.transactId, sourceAcc: data.sourceAcc, DestinAcc: data.DestinAcc, amount: data.amount}}
-                >
-                  <tr key={index} className='row flex items-center justify-between px-6'>
-                    <td>{data.transactId}</td>
-                    <td>{data.sourceAcc}</td>
-                    <td>{data.DestinAcc}</td>
-                    <td>{data.amount}</td>
-                    <td className='font-[700] text-[1.1rem]'>...</td>
-                  </tr>
-                </NavLink>
-              ))}
-            </tbody>
-        </table>
+        <section className='overflow-x-auto lg:overflow-x-hidden mt-6'>
+          <table className='w-full'>
+              <tr className='flex items-center justify-between bg-[#F9FBFC] rounded-[100px] px-6 p-[.8rem] border-0'>
+                <th>Transact ID</th>
+                <th>Sourse Acct</th>
+                <th>Destination Acct Type</th>
+                <th>Amout</th>
+                <th></th>
+              </tr>
+              <tbody>
+                {tracsactData.map((data, index) =>(
+                  <NavLink 
+                  to={`/transaction/${data.id}`}
+                  state={{transactId: data.transactId, sourceAcc: data.sourceAcc, DestinAcc: data.DestinAcc, amount: data.amount}}
+                  >
+                    <tr key={index} className='row flex items-center justify-between px-6'>
+                      <td>{data.transactId}</td>
+                      <td>{data.sourceAcc}</td>
+                      <td>{data.DestinAcc}</td>
+                      <td>{data.amount}</td>
+                      <td className='font-[700] text-[1.1rem]'>...</td>
+                    </tr>
+                  </NavLink>
+                ))}
+              </tbody>
+          </table>
+        </section>
       </section>
       
     </>

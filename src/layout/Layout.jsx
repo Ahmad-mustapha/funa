@@ -12,7 +12,7 @@ const Layout = () => {
           <Header 
         //   userEmail={userEmail} text={headerText} 
           />
-          <div className='lg:ml-[370px] bg rounded-lg h m-24'>{<Outlet />}</div>
+          <div className='lg:ml-[370px] bg rounded-lg mx-10 my-24 lg:m-24'>{<Outlet />}</div>
       </div>
     </div>
   )
