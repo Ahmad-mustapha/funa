@@ -12,7 +12,7 @@ const summaryData = [
 export const Summary = () =>(
   <ul className='flex items-center gap-6 justify-center flex-wrap xl:justify-start xl:flex-nowrap'>
     {summaryData.map((data, index) =>(
-      <li key={index} className='w-[15.5rem] flex flex-col items-center justify-center gap-2 p-6 px-10 rounded-xl border-[1px] border-gray-200'>
+      <li key={index} className='min-w-[15.5rem] xl:w-full flex flex-col items-center justify-center gap-2 p-6 px-10 rounded-xl border-[1px] border-gray-200'>
         <span className='font-[400] text-[14px]'>{data.title}</span><span className='font-[600] text-[30px]'>{data.amount}</span>
       </li>
     ))}
@@ -31,11 +31,11 @@ const Dashboard = () => {
         <div className='flex items-center justify-between'>
           <p className='text-[1.3rem] font-[600] mb-4'>Current Statistics</p>
           <div className='flex items-center gap-2'>
-            <select name="" id="" className='rounded-lg py-1 px-3 border-[1px] border-gray-200 outline-none'>
+            <select name="" id="" className='rounded-xl py-3 px-5 border-[1px] border-gray-200 outline-none'>
               <option value="">Cashflow</option>
               <option value=""></option>
             </select>
-            <select name="" id="" className='rounded-lg py-1 px-3 border-[1px] border-gray-200 outline-none'>
+            <select name="" id="" className='rounded-xl py-3 px-5 border-[1px] border-gray-200 outline-none'>
               <option value="">Monthly</option>
               <option value=""></option>
             </select>

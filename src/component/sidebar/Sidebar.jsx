@@ -23,12 +23,12 @@ const navLinks = [
 
 const Sidebar = () => {
   return (
-    <div id='sidebar' className='flex items-start flex-col px-6 py-[.8rem]'>
+    <div id='sidebar' className='flex items-start flex-col px-6 py-[.8rem] h-full'>
       <div className='flex items-center gap-2'>
         <div><img src={Profileimage2} alt="" /></div>
         <p className='font-[700] text-[1.3rem]'>Sanni Ahmed</p>
       </div>
-      <ul className='w-full flex flex-col gap-[.8rem] mt-4'>
+      <ul className='w-full h-full flex flex-col gap-[] justify-between mt-4'>
         {navLinks.map((link, index) =>(
           <li 
           key={index}
