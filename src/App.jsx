@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './layout/Layout'
-import { Dashboard, Kyc, Logout, Payout, Settings, Team, Transaction,TransactionId, Users } from './pages/import'
+import { Dashboard, Kyc, Logout, Payout, Settings, Team, Transaction,TransactionId, Users, Payout } from './pages/import'
 
 import './App.css'
 
@@ -18,7 +18,7 @@ function App() {
             <Route path='transaction/:id' element={<TransactionId />}/>
             <Route path='/users' element={<Users />}/>
             <Route path='/kyc' element={<Kyc />}/>
-            <Route path='/payout' element={<Payout />}/>
+            <Route path='/payment' element={<Payout />}/>
             <Route path='/team' element={<Team />}/>
             <Route path='/settings' element={<Settings />}/>
             <Route path='/logout' element={<Logout />}/>
