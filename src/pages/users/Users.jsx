@@ -7,6 +7,7 @@ import { FiFilter } from "react-icons/fi";
 import { FiSearch } from "react-icons/fi";
 import { IoFilterSharp } from "react-icons/io5";
 import { BsEye } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 import './user.css'
 
 const kycData = [
@@ -41,18 +42,19 @@ const EachUserData = () =>(
 const Users = () => {
   return (
     <div>
-      <EachUserData />
-      <section className='mt-6 bg-white rounded-xl p-4'>
+      {/* <EachUserData /> */}
+      <section className='mt-6 bg-white rounded-xl p-8 px-10'>
         <div className='flex items-center justify-between'>
-          <p className='text-[1.3rem] font-[600] mb-4'>User Summary</p>
+          <p className='text-[1.3rem] font-[600] mb-4'>User History</p>
           <div className='flex items-center gap-3'>
-            <div className='relative w-[150px]'><input 
+            <div className='relative w-[250px]'>
+            <input 
             placeholder='Search'
             type="text" 
-            className='w-full border-[1px] border-slate-300 rounded-md p-[.3rem] pl-8'/>
-            <FiSearch className='absolute top-2 left-2 text-[1.1rem] font-[600]'/>
+            className='w-full border-[1px] border-slate-300 rounded-xl p-[.5rem] pl-8'/>
+            <FiSearch className='absolute top-3 left-2 text-[1.1rem] font-[600]'/>
             </div>
-            <div className='relative w-[100px]'>
+            {/* <div className='relative w-[100px]'>
               <FiFilter className='text-black absolute top-2 left-1 text-[1.1rem] z-10'/>
               <select name="" id="" className='relative border-[1px] border-slate-300 rounded-md px-[1.5rem] p-[.3rem]'>
                 <option value="">Filter</option>
@@ -65,30 +67,22 @@ const Users = () => {
                 <option value="">Export</option>
                 <option value=""></option>
               </select>
-            </div>
+            </div> */}
           </div>
         </div>
         <section className='mt-6 overflow-x-auto lg:overflow-x-hidden'>
           <table className='w-full'>
-              <tr className='flex items-center justify-between '>
-                <th className='flex items-center gap-2 pb-3'>Customer <IoFilterSharp /></th>
-                <th className='flex items-center gap-2 pb-3'>Date <IoFilterSharp /></th>
-                <th className='flex items-center gap-2 pb-3'>Document Type <IoFilterSharp /></th>
-                <th className='flex items-center gap-2 pb-3'>Action <IoFilterSharp /></th>
-                <th className='flex items-center gap-2 pb-3'>View <IoFilterSharp /></th>
+              <tr className='flex items-center justify-between text-[14px]'>
+                <th className='flex items-center gap-2 pb-3'>User Name</th>
+                <th className='flex items-center gap-2 pb-3'>Email Address</th>
+                <th className='flex items-center gap-2 pb-3'>Phone No.</th>
+                <th className='flex items-center gap-2 pb-3'>Action</th>
               </tr>
-              <tr className='flex items-center justify-between py-3 w-full'>
-                <td>Customer</td>
-                <td>12 Aug 2022 - 12:25 am</td>
-                <td>Drivers License</td>
-                <td>
-                  <select name="" id="" className='border-[1px] border-slate-300 rounded-md p-[] outline-none'>
-                    <option value="">Approved</option>
-                    <option value="">Processing</option>
-                    <option value="">Rejected</option>
-                  </select>
-                </td>
-                <td className='flex items-center gap-2'><BsEye className='text-[1.2rem]'/> View</td>
+              <tr className='flex items-center justify-between py-3 w-full text-[12px]'>
+                <td className='flex gap-2'><span className='bg-[#2C8CFB] p-1 px-[5px] rounded-md text-[12px]'>LV</span> Louis Vuitton</td>
+                <td>ahmad12@gmail.com</td>
+                <td>+23481903456</td>
+                <td className='bg-[#2C8CFB] text-white rounded-[14px] p-2 px-6'><Link>Preview</Link></td>
               </tr>
           </table>
         </section>

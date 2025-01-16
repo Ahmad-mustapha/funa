@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './layout/Layout'
-import { Dashboard, Kyc, Logout, Payout, Settings, Team, Transaction,TransactionId, Users, Payout } from './pages/import'
+import { Dashboard, Kyc, Logout, Payout, Settings, Team, Transaction,TransactionId, Users } from './pages/import'
 
 import './App.css'
 
