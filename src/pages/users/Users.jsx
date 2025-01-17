@@ -15,29 +15,36 @@ const kycData = [
   { id: 2, title: 'Approved', num: 207, image: Checkfill },
   { id: 3, title: 'Rejected', num: 207, image: Cancel }
 ]
-const EachUserData = () =>(
-  <div className='flex items-center gap-6 justify-center flex-wrap xl:justify-start xl:flex-nowrap'>
-    { kycData.map((data, index) =>(
-      <div key={index} className='w-[15.5rem] flex items-center gap-4 bg-white p-4 rounded-xl'>
-        <div className='p-2 rounded-xl'
-          style={{
-            backgroundColor:
-              data.title === "Total Subscription"
-                ? "rgba(56, 101, 215, 0.16)"
-                : data.title === "Approved"
-                ? "rgba(224, 254, 233)"
-                : data.title === "Rejected"
-                && "rgba(231, 77, 60, 0.16)"
-          }}
-        ><img src={data.image} alt="" /></div>
-        <div className='flex flex-col gap-1'>
-          <p className='text-[.85rem] text-[#64748B]'>{data.title}</p>
-          <p className='text-[1.1rem] font-[700]'>{data.num}</p>
-        </div>
-      </div>
-    ))}
-  </div>
-)
+// const EachUserData = () =>(
+//   <div className='flex items-center gap-6 justify-center flex-wrap xl:justify-start xl:flex-nowrap'>
+//     { kycData.map((data, index) =>(
+//       <div key={index} className='w-[15.5rem] flex items-center gap-4 bg-white p-4 rounded-xl'>
+//         <div className='p-2 rounded-xl'
+//           style={{
+//             backgroundColor:
+//               data.title === "Total Subscription"
+//                 ? "rgba(56, 101, 215, 0.16)"
+//                 : data.title === "Approved"
+//                 ? "rgba(224, 254, 233)"
+//                 : data.title === "Rejected"
+//                 && "rgba(231, 77, 60, 0.16)"
+//           }}
+//         ><img src={data.image} alt="" /></div>
+//         <div className='flex flex-col gap-1'>
+//           <p className='text-[.85rem] text-[#64748B]'>{data.title}</p>
+//           <p className='text-[1.1rem] font-[700]'>{data.num}</p>
+//         </div>
+//       </div>
+//     ))}
+//   </div>
+// )
+
+const Eachuserdata = [
+  { id: 1, name: 'Louis Vuitton', email: 'ahmad12@gmail.com', number: +2349044455566 },
+  { id: 2, name: 'Louis Vuitton', email: 'ahmad12@gmail.com', number: +2349044455566 },
+  { id: 3, name: 'Louis Vuitton', email: 'ahmad12@gmail.com', number: +2349044455566 },
+  { id: 4, name: 'Louis Vuitton', email: 'ahmad12@gmail.com', number: +2349044455566 },
+]
 
 const Users = () => {
   return (
@@ -54,20 +61,6 @@ const Users = () => {
             className='w-full border-[1px] border-slate-300 rounded-xl p-[.5rem] pl-8'/>
             <FiSearch className='absolute top-3 left-2 text-[1.1rem] font-[600]'/>
             </div>
-            {/* <div className='relative w-[100px]'>
-              <FiFilter className='text-black absolute top-2 left-1 text-[1.1rem] z-10'/>
-              <select name="" id="" className='relative border-[1px] border-slate-300 rounded-md px-[1.5rem] p-[.3rem]'>
-                <option value="">Filter</option>
-                <option value=""></option>
-              </select>
-            </div>
-            <div className='relative w-[100px]'>
-              <MdOutlineFileDownload className='text-black absolute top-2 left-1 text-[1.1rem] z-10'/>
-              <select name="" id="" className='w-full relative border-[1px] border-slate-300 rounded-md px-[1rem] p-[.3rem]'>
-                <option value="">Export</option>
-                <option value=""></option>
-              </select>
-            </div> */}
           </div>
         </div>
         <section className='mt-6 overflow-x-auto lg:overflow-x-hidden'>
@@ -78,12 +71,14 @@ const Users = () => {
                 <th className='flex items-center gap-2 pb-3'>Phone No.</th>
                 <th className='flex items-center gap-2 pb-3'>Action</th>
               </tr>
-              <tr className='flex items-center justify-between py-3 w-full text-[12px]'>
-                <td className='flex gap-2'><span className='bg-[#2C8CFB] p-1 px-[5px] rounded-md text-[12px]'>LV</span> Louis Vuitton</td>
-                <td>ahmad12@gmail.com</td>
-                <td>+23481903456</td>
-                <td className='bg-[#2C8CFB] text-white rounded-[14px] p-2 px-6'><Link>Preview</Link></td>
-              </tr>
+              {Eachuserdata.map((data, index) =>(
+                <tr key={index} className='flex items-center justify-between py-4 w-full text-[12px]'>
+                  <td className='flex gap-2'><span className='bg-[#2C8CFB] p-1 px-[5px] rounded-md text-[12px]'>LV</span>{data.name}</td>
+                  <td>{data.email}</td>
+                  <td>{data.number}</td>
+                  <td className='text-white'><Link className='w-full bg-[#2C8CFB] p-2 px-6 rounded-[14px]' to={`/users/${data.id}`}>Preview</Link></td>
+                </tr>
+              ))}
           </table>
         </section>
       </section>

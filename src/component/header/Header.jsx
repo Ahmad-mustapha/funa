@@ -67,7 +67,7 @@ const Header = () => {
       </div>
       {showMenu && <div onClick={()=>setShowMenu(false)} className={`${showMenu ? 'overlays' : ''}`}></div>}
       {showMenu && (
-        <div className='h-[95vh] fixed left-0 top-[1rem] w-4/6 md:w-3/6'><Sidebarsm /></div>
+        <div className='h-[95vh] fixed left-10 top-[1rem] w-4/6 md:w-3/6'><Sidebarsm /></div>
       )}
     </div>
   )

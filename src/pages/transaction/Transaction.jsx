@@ -20,7 +20,7 @@ const Transaction = () => {
     <>
       <section className='mt-6 bg-white rounded-xl p-4'>
         <div className='flex items-center justify-between'>
-          <p className='text-[1.3rem] font-[600] mb-4'>User Summary</p>
+          <p className='text-[1.3rem] font-[600] mb-4'>Transaction History</p>
           <div className='flex items-center gap-3'>
             <div className='relative w-[150px]'><input 
             placeholder='Search'
@@ -52,7 +52,7 @@ const Transaction = () => {
                   state={{transactId: data.transactId, sourceAcc: data.sourceAcc, DestinAcc: data.DestinAcc, amount: data.amount}}
                   >
                     <tr key={index} className='row flex items-center justify-between px-6'>
-                      <td>{data.transactId}</td>
+                      <td className='flex gap-2 items-center'><span className='border-[1px] rounded-md px-[.3rem]'>{data.id}</span> {data.transactId}</td>
                       <td>{data.sourceAcc}</td>
                       <td>{data.DestinAcc}</td>
                       <td>{data.amount}</td>
