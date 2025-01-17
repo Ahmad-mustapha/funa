@@ -53,20 +53,20 @@ const Userdetails = () => {
             <div className='flex items-center gap-2'>
               <div className='relative w-[180px]'>
                 <input 
-                placeholder='Search'
+                placeholder='Search transaction'
                 type="text" 
                 className='w-full border-[1px] border-slate-300 rounded-xl p-[.5rem] pl-8'/>
                 <FiSearch className='absolute top-3 left-2 text-[1.1rem] font-[600]'/>
               </div>
               <div className='relative w-[130px]'>
                 <select name="" id="" className='w-full relative border-[1px] border-slate-300 rounded-xl p-[.5rem]'>
-                  <option value="">Filter</option>
+                  <option value="">Monthly</option>
                   <option value=""></option>
                 </select>
               </div>
             </div>
           </div>
-          <div className='overflow-x-auto lg:overflow-x-hidden mt-6'>
+          <div className='overflow-x-auto lg:overflow-x-hidden mt-6 p-[1.3rem]'>
             <table className='w-full'>
                 <tr className='flex items-center justify-between bg-[#F9FBFC] rounded-[100px] px-6 p-[.8rem] border-0'>
                   <th>Transact ID</th>
@@ -78,7 +78,7 @@ const Userdetails = () => {
                 <tbody>
                   {tracsactData.map((data, index) =>(
                     <NavLink 
-                    to={`/transaction/${data.id}`}
+                    to={`/users/${data.id}/usertransaction`}
                     state={{transactId: data.transactId, sourceAcc: data.sourceAcc, DestinAcc: data.DestinAcc, amount: data.amount}}
                     >
                       <tr key={index} className='row flex items-center justify-between px-6'>

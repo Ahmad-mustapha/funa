@@ -9,6 +9,7 @@ const payoutDetails = [
   { id: 5, title: 'Total Investment', amount: '5,400,000' },
 ]
 
+
 const Payout = () => {
   return (
     <div>
