@@ -4,6 +4,8 @@ import Unverified from '../../assets/unverified.png'
 import Verified from '../../assets/verified.png'
 import Pending from '../../assets/pending.png'
 import NewUserBarChart from '../../component/charts/NewUserBarChart'
+import ActiveUseBarChart from '../../component/charts/ActiveUseBarChart'
+import AllUsers from '../../component/allusers/AllUsers'
 
 const userData = [
   { id: 1, title: 'Total Subscription', num: 207, image: Total },
@@ -13,14 +15,6 @@ const userData = [
 
 ]
 
-
-const tracsactData = [
-  { id: 1, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
-  { id: 2, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
-  { id: 3, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
-  { id: 4, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
-  { id: 5, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' }
-]
 
 
 const EachUserData = () =>(
@@ -51,31 +45,13 @@ const Kyc = () => {
   return (
     <div>
       <EachUserData />
-      <section className='mt-8'>
+      <section className='mt-8 flex items-center gap-8 flex-wrap xl:flex-nowrap'>
         <NewUserBarChart />
+        <ActiveUseBarChart />
       </section>
-      {/* <section className='overflow-x-auto lg:overflow-x-hidden mt-6'>
-        <table className='w-full'>
-          <tr className='flex items-center justify-between bg-[#F9FBFC] rounded-[100px] px-6 p-[.8rem] border-0'>
-            <th>Transact ID</th>
-            <th>Sourse Acct</th>
-            <th>Destination Acct Type</th>
-            <th>Amout</th>
-            <th></th>
-          </tr>
-          <tbody className=''>
-            {tracsactData.map((data, index) =>(
-                <tr key={index} className='row flex items-center justify-between px-6 w-full'>
-                  <td className='flex gap-2 items-center'><span className='border-[1px] rounded-md px-[.3rem]'>{data.id}</span> {data.transactId}</td>
-                  <td>{data.sourceAcc}</td>
-                  <td>{data.DestinAcc}</td>
-                  <td>{data.amount}</td>
-                  <td className='font-[700] text-[1.1rem]'>...</td>
-                </tr>
-            ))}
-          </tbody>
-        </table>
-      </section> */}
+      <section>
+        <AllUsers />
+      </section>
     </div>
   )
 }

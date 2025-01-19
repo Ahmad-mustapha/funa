@@ -13,11 +13,11 @@ const chartData = [
   { month: "Su", visitors: 750 },
 ];
 
-export const NewUserBarChart = () => {
+export const ActiveUseBarChart = () => {
   return (
     <Card className="bg-white shadow-md rounded-lg w-full xl:w-3/6 shadow-[#0D0A2C14]">
       <CardHeader className='flex items-center justify-between'>
-        <CardTitle>New User</CardTitle>
+        <CardTitle>Active Users</CardTitle>
         <div className="flex items-center gap-2">
           <select className="border-[1px] py-1 px-3 outline-none rounded-lg" name="" id="">
             <option value="">Filter</option>
@@ -68,4 +68,4 @@ export const NewUserBarChart = () => {
   );
 };
 
-export default NewUserBarChart;
+export default ActiveUseBarChart;
