@@ -3,7 +3,7 @@ import Total from '../../assets/total.png'
 import Unverified from '../../assets/unverified.png'
 import Verified from '../../assets/verified.png'
 import Pending from '../../assets/pending.png'
-import { NavLink } from 'react-router-dom'
+import NewUserBarChart from '../../component/charts/NewUserBarChart'
 
 const userData = [
   { id: 1, title: 'Total Subscription', num: 207, image: Total },
@@ -51,10 +51,10 @@ const Kyc = () => {
   return (
     <div>
       <EachUserData />
-      <section>
-
+      <section className='mt-8'>
+        <NewUserBarChart />
       </section>
-      <section className='overflow-x-auto lg:overflow-x-hidden mt-6'>
+      {/* <section className='overflow-x-auto lg:overflow-x-hidden mt-6'>
         <table className='w-full'>
           <tr className='flex items-center justify-between bg-[#F9FBFC] rounded-[100px] px-6 p-[.8rem] border-0'>
             <th>Transact ID</th>
@@ -63,24 +63,19 @@ const Kyc = () => {
             <th>Amout</th>
             <th></th>
           </tr>
-          <tbody>
+          <tbody className=''>
             {tracsactData.map((data, index) =>(
-              // <NavLink 
-              // to={`/kyc/${data.id}`}
-              // state={{transactId: data.transactId, sourceAcc: data.sourceAcc, DestinAcc: data.DestinAcc, amount: data.amount}}
-              // >
-                <tr key={index} className='row flex items-center justify-between px-6'>
+                <tr key={index} className='row flex items-center justify-between px-6 w-full'>
                   <td className='flex gap-2 items-center'><span className='border-[1px] rounded-md px-[.3rem]'>{data.id}</span> {data.transactId}</td>
                   <td>{data.sourceAcc}</td>
                   <td>{data.DestinAcc}</td>
                   <td>{data.amount}</td>
                   <td className='font-[700] text-[1.1rem]'>...</td>
                 </tr>
-              // </NavLink>
             ))}
           </tbody>
         </table>
-      </section>
+      </section> */}
     </div>
   )
 }

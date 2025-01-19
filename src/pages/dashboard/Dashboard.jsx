@@ -1,6 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-// import Piechart from '../../component/charts/Piechart'
 import { Component } from '../../component/charts/Piechart'
 
 const summaryData = [
@@ -53,7 +51,7 @@ const Dashboard = () => {
           <div className='flex gap-[.9rem] items-center'>
             <input 
             className='w-6 h-6 rounded-full border-2 border-gray-700 appearance-none checked:bg-green-500 checked:border-green-500'
-            type="checkbox" checked name="" id="" /><label htmlFor="">Cash Withdrawal</label>
+            type="checkbox" defaultChecked name="" id="" /><label htmlFor="">Cash Withdrawal</label>
           </div>
           <div className='flex gap-[.9rem] items-center'>
             <input 

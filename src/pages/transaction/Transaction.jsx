@@ -7,11 +7,11 @@ import { BsEye } from "react-icons/bs";
 import './transaction.css'
 import { Link, NavLink, useLocation } from 'react-router-dom';
 const tracsactData = [
-  { id: 1, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
-  { id: 2, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
-  { id: 3, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
-  { id: 4, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
-  { id: 5, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' }
+  { id: 1, transactId: 'd3-7ea47', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
+  { id: 2, transactId: 'd3-7ea47', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
+  { id: 3, transactId: 'd3-7ea47', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
+  { id: 4, transactId: 'd3-7ea47', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
+  { id: 5, transactId: 'd3-7ea47', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' }
 ]
 
 const Transaction = () => {
@@ -51,7 +51,7 @@ const Transaction = () => {
                   to={`/transaction/${data.id}`}
                   state={{transactId: data.transactId, sourceAcc: data.sourceAcc, DestinAcc: data.DestinAcc, amount: data.amount}}
                   >
-                    <tr key={index} className='row flex items-center justify-between px-6'>
+                    <tr key={index} className='row gap-6 lg:gap-0 flex items-center justify-between px-6'>
                       <td className='flex gap-2 items-center'><span className='border-[1px] rounded-md px-[.3rem]'>{data.id}</span> {data.transactId}</td>
                       <td>{data.sourceAcc}</td>
                       <td>{data.DestinAcc}</td>

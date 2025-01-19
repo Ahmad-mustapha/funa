@@ -16,6 +16,8 @@ export default {
         firefox: "#ff5722",
         edge: "#00bcd4",
         other: "#9e9e9e",
+        "chart-1": "#4A90E2", // Customize colors as needed
+        "color-desktop": "#4285F4", // Color for bars
       },
     },
   },

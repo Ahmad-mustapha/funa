@@ -32,7 +32,7 @@ const navLinks = [
   {id: 8, text: 'Log Out', icon: <BiLogOut />, link: '/logout'},
 ]
 
-const Sidebarsm = () => {
+const Sidebarsm = ({ setShowMenu }) => {
   return (
     // <div id='sidebar' className='flex items-start flex-col px-6 py-[.8rem] h-full'>
       <ul className='w-full flex flex-col justify-between h-full p-8 pl-4 bg-slate-300 rounded-xl'>
@@ -40,7 +40,7 @@ const Sidebarsm = () => {
           <li 
           key={index}
           className='flex items-center gap-2 text-[#2C8CFB] w-full text-[1rem] rounded-xl bg-[#F1F8FF] py-[.4rem] px-3'
-          ><span>{link.icon}</span><Link to={link.link} className='w-full'>{link.text}</Link></li>
+          ><span>{link.icon}</span><Link onClick={()=> setShowMenu(false)} to={link.link} className='w-full'>{link.text}</Link></li>
         ))}
       </ul>
     // </div>
@@ -51,11 +51,11 @@ const Header = () => {
   const [ showMenu, setShowMenu ] = useState(false)
   return (
     <div className='z-50 h-[5rem] bg-white shadow-md fixed w-full top-0 py-6 px-16 flex items-center justify-between'>
-      <div className='w-[10rem] md:w-[12rem]'><img className='w-full' src={Logo} alt="" /></div>
-      <div><h1 className='font-[700] text-[1.3rem]'>Dashboard</h1></div>
+      <div className='w-[8rem] sm:w-[10rem] md:w-[12rem]'><img className='w-full' src={Logo} alt="" /></div>
+      <div><h1 className='hidden md:block font-[700] text-[1.3rem]'>Dashboard</h1></div>
       <div></div>
       <div className='flex items-center gap-4'>
-        <span className='rounded-full'><img src={ProfileImage} alt="" /></span>
+        <span className='w-[3rem] rounded-full'><img className='w-full' src={ProfileImage} alt="" /></span>
         <span className='hidden md:flex'>Sanni Ahmed Agboola</span>
         <span><CiSearch className='text-[1.7rem] font-[500]'/></span>
         <span className='relative'><FaRegBell className='text-[1.7rem] font-[500]'/><span className='absolute -bottom-1 bg-red-600 rounded-full text-[.75rem] font-[700] px-[.32rem] text-white right-0'>1</span></span>

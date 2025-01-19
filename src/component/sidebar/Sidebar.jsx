@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Profileimage2 from '../../assets/profileimg2.png'
 import { MdOutlineDashboard } from "react-icons/md";
 import { TbTransferIn } from "react-icons/tb";
@@ -22,6 +22,7 @@ const navLinks = [
 ]
 
 const Sidebar = () => {
+  const location = useLocation()
   return (
     <div id='sidebar' className='flex items-start flex-col px-6 py-[.8rem] h-full'>
       <div className='flex items-center gap-2'>
@@ -32,7 +33,7 @@ const Sidebar = () => {
         {navLinks.map((link, index) =>(
           <li 
           key={index}
-          className='flex items-center gap-2 text-[#2C8CFB] w-full text-[1rem] rounded-xl bg-[#F1F8FF] py-[.4rem] px-3'
+          className={`flex items-center gap-2 text-[#2C8CFB] w-full text-[1rem] py-[.4rem] px-3 ${location.pathname === link.link ? ' rounded-xl bg-[#F1F8FF]': ''}`}
           ><span>{link.icon}</span><Link to={link.link} className='w-full'>{link.text}</Link></li>
         ))}
       </ul>
