@@ -10,7 +10,8 @@ const Layout = () => {
       </div>
       <div className='w-full'>
           <Header 
-        //   userEmail={userEmail} text={headerText} 
+          // userEmail={userEmail} 
+          // text={headerText} 
           />
           <div className='lg:ml-[370px] bg rounded-lg mx-10 my-24 lg:m-24'>{<Outlet />}</div>
       </div>

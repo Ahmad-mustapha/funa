@@ -1,5 +1,7 @@
 import React from 'react'
 import { FiSearch } from "react-icons/fi";
+import PayoutHistory from './PayoutInfo';
+import { NavLink } from 'react-router-dom';
 
 const payoutDetails = [
   { id: 1, title: 'Total Investment', amount: '5,400,000' },
@@ -9,6 +11,14 @@ const payoutDetails = [
   { id: 5, title: 'Total Investment', amount: '5,400,000' },
 ]
 
+
+const payoutData = [
+  { id: 1, accName: 'Sanni Ahmad Agboola', accNo: '1234567891', bankName: 'UBA Bank', decription: 'Add from acct', amount: 'N20000' },
+  { id: 2, accName: 'Sanni Ahmad Agboola', accNo: '1234567891', bankName: 'UBA Bank', decription: 'Withdraw to acct', amount: 'N20000' },
+  { id: 3, accName: 'Sanni Ahmad Agboola', accNo: '1234567891', bankName: 'UBA Bank', decription: 'Pending Withdrawal', amount: 'N20000' },
+  { id: 4, accName: 'Sanni Ahmad Agboola', accNo: '1234567891', bankName: 'UBA Bank', decription: 'Pending Withdrawal', amount: 'N20000' },
+  { id: 5, accName: 'Sanni Ahmad Agboola', accNo: '1234567891', bankName: 'UBA Bank', decription: 'Add from acct', amount: 'N20000' }
+]
 
 const Payout = () => {
   return (
@@ -31,9 +41,38 @@ const Payout = () => {
             <input 
             placeholder='Search'
             type="text" 
-            className='w-full border-[1px] border-slate-300 rounded-2xl p-[.8rem] pl-8'/>
-            <FiSearch className='absolute top-4 left-2 text-[1.2rem] font-[600]'/>
+            className='w-full border-[1px] border-slate-300 rounded-2xl p-[.5rem] pl-8 outline-none'/>
+            <FiSearch className='absolute top-3 left-2 text-[1.2rem] font-[600]'/>
           </div>
+        </div>
+        <div className='overflow-x-auto mt-6'>
+          <table className='w-full'>
+              <tr className='flex items-center justify-between bg-[#F9FBFC] rounded-[100px] px-6 p-[.8rem] border-0'>
+                <th>Account Name</th>
+                <th>Account No.</th>
+                <th>Bank Name</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th></th>
+              </tr>
+              <tbody>
+                {payoutData.map((data, index) =>(
+                  <NavLink 
+                  to={`/payout/${data.id}`}
+                  // state={{accName: data.accName, accNo: data.accNo, DestinAcc: data.DestinAcc, amount: data.amount}}
+                  >
+                    <tr key={index} className='row gap-6 flex items-center justify-between px-6'>
+                      <td className='flex gap-2 items-center'><span className='border-[1px] rounded-md px-[.3rem]'>{data.id}</span> {data.accName}</td>
+                      <td>{data.accNo}</td>
+                      <td>{data.bankName}</td>
+                      <td>{data.decription}</td>
+                      <td>{data.amount}</td>
+                      <td className='font-[700] text-[1.1rem]'>...</td>
+                    </tr>
+                  </NavLink>
+                ))}
+              </tbody>
+          </table>
         </div>
       </section>
     </div>

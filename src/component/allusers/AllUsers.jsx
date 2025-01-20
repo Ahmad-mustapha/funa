@@ -4,11 +4,11 @@ import { IoFilter } from "react-icons/io5";
 
 
 const tracsactData = [
-    { id: 1, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
-    { id: 2, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
-    { id: 3, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
-    { id: 4, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
-    { id: 5, transactId: 'd3-7ea471789ebe', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' }
+    { id: 1, name: 'Ahmad S.A', regDate: '12 Feb 2024 - 12:25am', userId: 'Mendorz', email: 'ahmad12@gmail.com', number: '09023456782', },
+    { id: 2, name: 'Ahmad S.A', regDate: '12 Feb 2024 - 12:25am', userId: 'Mendorz', email: 'ahmad12@gmail.com', number: '09023456782', },
+    { id: 3, name: 'Ahmad S.A', regDate: '12 Feb 2024 - 12:25am', userId: 'Mendorz', email: 'ahmad12@gmail.com', number: '09023456782', },
+    { id: 4, name: 'Ahmad S.A', regDate: '12 Feb 2024 - 12:25am', userId: 'Mendorz', email: 'ahmad12@gmail.com', number: '09023456782', },
+    { id: 5, name: 'Ahmad S.A', regDate: '12 Feb 2024 - 12:25am', userId: 'Mendorz', email: 'ahmad12@gmail.com', number: '09023456782', }
   ]
 
 export const AllUsers = () => {
@@ -23,18 +23,22 @@ export const AllUsers = () => {
                     className='w-full border-[1px] border-slate-300 rounded-md p-[.3rem] pl-8'/>
                     <FiSearch className='absolute top-2 left-2 text-[1.1rem] font-[600]'/>
                 </div>
-                <div className='relative w-[100px]'>
+                <div className='relative flex items-center gap-2 w-[200px]'>
                     <select name="" id="" className='w-full relative border-[1px] border-slate-300 rounded-md p-[.3rem]'>
-                    <option value="">Monthly</option>
-                    <option value=""></option>
+                        <option value="">Filter</option>
+                        <option value=""></option>
+                    </select>
+                    <select name="" id="" className='w-full relative border-[1px] border-slate-300 rounded-md p-[.3rem]'>
+                        <option value="">Filter</option>
+                        <option value=""></option>
                     </select>
                 </div>
             </div>
         </div>
-        <section className='overflow-x-auto lg:overflow-x-hidden'>
+        <section className='overflow-x-auto'>
             <table className='w-full'>
-            <tr className='flex items-center justify-between border-t-[1px] mt-6'>
-                <th>Name <IoFilter /></th>
+            <tr className='flex items-center justify-between border-t-[1px] text-left mt-6'>
+                <th><input type="checkbox" /> Name <IoFilter /></th>
                 <th>Registration Date <IoFilter /></th>
                 <th>User ID <IoFilter /></th>
                 <th>Email <IoFilter /></th>
@@ -42,14 +46,21 @@ export const AllUsers = () => {
                 <th>Action<IoFilter /></th>
                 <th>KYC <IoFilter /></th>
             </tr>
-            <tbody className=''>
+            <tbody className='w-full'>
                 {tracsactData.map((data, index) =>(
-                    <tr key={index} className='row flex items-center justify-between px-6 w-full'>
-                    <td className='flex gap-2 items-center'><span className='border-[1px] rounded-md px-[.3rem]'>{data.id}</span> {data.transactId}</td>
-                    <td>{data.sourceAcc}</td>
-                    <td>{data.DestinAcc}</td>
-                    <td>{data.amount}</td>
-                    <td className='font-[700] text-[1.1rem]'>...</td>
+                    <tr key={index} className='row flex items-center gap-2 justify-between text-left w-full overflow-x-auto'>
+                    <td className='flex gap-2 items-center'><input type="checkbox" /> {data.name}</td>
+                    <td>{data.regDate}</td>
+                    <td>{data.userId}</td>
+                    <td>{data.email}</td>
+                    <td className=''>{data.number}</td>
+                    <td className=''>
+                        <select name="" id="" className='border-[1px] bg-[#5E636614] p-2 rounded-lg outline-none'>
+                            <option value="">Verified</option>
+                            <option value="">Unverified</option>
+                        </select>
+                    </td>
+                    <td className='bg-[#E0FEE9B2] text-[#24D164] p-2 px-3 rounded-lg'>Completed</td>
                     </tr>
                 ))}
             </tbody>
