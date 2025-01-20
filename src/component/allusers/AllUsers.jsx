@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiSearch } from 'react-icons/fi'
-import { FiFilter } from "react-icons/fi";
+import { IoFilter } from "react-icons/io5";
 
 
 const tracsactData = [
@@ -34,13 +34,13 @@ export const AllUsers = () => {
         <section className='overflow-x-auto lg:overflow-x-hidden'>
             <table className='w-full'>
             <tr className='flex items-center justify-between border-t-[1px] mt-6'>
-                <th>Name <FiFilter /></th>
-                <th>Registration Date</th>
-                <th>User ID</th>
-                <th>Email</th>
-                <th>Phone No <FiFilter /></th>
-                <th>Action<FiFilter /></th>
-                <th>KYC <FiFilter /></th>
+                <th>Name <IoFilter /></th>
+                <th>Registration Date <IoFilter /></th>
+                <th>User ID <IoFilter /></th>
+                <th>Email <IoFilter /></th>
+                <th>Phone No <IoFilter /></th>
+                <th>Action<IoFilter /></th>
+                <th>KYC <IoFilter /></th>
             </tr>
             <tbody className=''>
                 {tracsactData.map((data, index) =>(
