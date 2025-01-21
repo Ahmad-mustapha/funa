@@ -73,7 +73,7 @@ const PayoutInfo = () => {
                 </div>
               </div>
               <div className='w-full'>
-                <label htmlFor="">Description <span>(Optional)</span></label>
+                <label htmlFor="">Description <span className='text-slate-400'>(Optional)</span></label>
                 <input
                 className='border-[1px] rounded-xl p-2 w-full'
                 type="text" />
