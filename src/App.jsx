@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './layout/Layout'
-import { Dashboard, Kyc, Logout, Payout, Settings, Team, Transaction,TransactionId, Users, Userdetails, Usertransaction, PayoutInfo } from './pages/import'
+import { Dashboard, Kyc, Logout, Payout, Settings, Team, Transaction,TransactionId, Users, Userdetails, Usertransaction, PayoutInfo, AddTeamMember } from './pages/import'
 
 import './App.css'
 
@@ -26,6 +26,7 @@ function App() {
           <Route path='/users/:id' element={<Userdetails />}/>
           <Route path='/users/:id/usertransaction' element={<Usertransaction />}/>
           <Route path='/payout/:id' element={<PayoutInfo />}/>
+          <Route path='/team/add-team-member' element={<AddTeamMember />}/>
         </Routes>
       </BrowserRouter>
     </>

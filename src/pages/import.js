@@ -8,6 +8,6 @@ export { default as Kyc } from '../pages/kyc/Kyc'
 export { default as Payout } from '../pages/payout/Payout'
 export { default as PayoutInfo } from './payout/PayoutInfo'
 export { default as Team } from '../pages/team/Team'
+export { default as AddTeamMember } from '../pages/team/AddTeamMember'
 export { default as Settings } from '../pages/settings/Settings'
 export { default as Logout } from '../pages/logout/Logout'
-

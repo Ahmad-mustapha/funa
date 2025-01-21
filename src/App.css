@@ -38,3 +38,6 @@ input[type = "checkbox"]{
     width: 100%;
     cursor: pointer;
 }
+input{
+    outline: none;
+}

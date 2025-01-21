@@ -59,7 +59,7 @@ const Payout = () => {
                 {payoutData.map((data, index) =>(
                   <NavLink 
                   to={`/payout/${data.id}`}
-                  // state={{accName: data.accName, accNo: data.accNo, DestinAcc: data.DestinAcc, amount: data.amount}}
+                  state={{accName: data.accName, accNo: data.accNo, DestinAcc: data.DestinAcc, amount: data.amount}}
                   >
                     <tr key={index} className='row gap-6 flex items-center justify-between px-6'>
                       <td className='flex gap-2 items-center'><span className='border-[1px] rounded-md px-[.3rem]'>{data.id}</span> {data.accName}</td>
