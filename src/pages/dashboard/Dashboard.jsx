@@ -50,17 +50,17 @@ const Dashboard = () => {
         <div className='flex items-center justify-end gap-[.9rem] text-[16px]'>
           <div className='flex gap-[.9rem] items-center'>
             <input 
-            className='w-6 h-6 rounded-full border-2 border-gray-700 appearance-none checked:bg-green-500 checked:border-green-500'
+            className='w-6 h-6 rounded-full border-2 border-gray-700'
             type="checkbox" defaultChecked name="" id="" /><label htmlFor="">Cash Withdrawal</label>
           </div>
           <div className='flex gap-[.9rem] items-center'>
             <input 
-            className='w-6 h-6 rounded-full border-2 border-gray-700 appearance-none checked:bg-green-500 checked:border-green-500'
+            className='w-6 h-6 rounded-full border-2 border-gray-700'
             type="checkbox" name="" id="" /><label htmlFor="">Send</label>
           </div>
           <div className='flex gap-[.9rem] items-center'>
             <input 
-            className='w-5 h-5 rounded-full border-2 border-gray-700 appearance-none checked:bg-green-500 checked:border-green-500'
+            className='w-6 h-6 rounded-full border-2 border-gray-700'
             type="checkbox" name="" id="" /><label htmlFor="">Receive</label>
           </div>
         </div>

@@ -8,7 +8,7 @@ const Settings = () => {
   return (
     <div className='bg-white rounded-xl p-8'>
       <h2 className='font-[600] text-[20px]'>Setting</h2>
-      <div className='flex items-center gap-4 mt-6'>
+      <div className='flex items-center gap-4 flex-wrap mt-6'>
         <button 
         onClick={() => setActiveSetting(0)}
         className={`border-[1px] rounded-[100px] py-2 px-6 font-[600] text-[14px] text-slate-500 ${activeSetting === 0 ? 'bg-[#2C8CFB] text-white' : ''}`}>Profile</button>

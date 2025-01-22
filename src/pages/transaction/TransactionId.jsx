@@ -18,7 +18,7 @@ const TransactionId = () => {
     console.log(state);
     
   return (
-    <div className='flex gap-4 p-10 items justify-center'>
+    <div className='flex gap-4 p-10 justify-center bg-[#F9FBFC]'>
         <section className='w-[330px] xl:w-[350px]'>
             <div className='bg-white rounded-xl p-6 flex flex-col justify-between h-[90vh]'>
                 <div className='rounded-xl'>

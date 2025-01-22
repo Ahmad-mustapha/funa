@@ -6,8 +6,6 @@ import { Dashboard, Kyc, Logout, Payout, Settings, Team, Transaction,Transaction
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <BrowserRouter>

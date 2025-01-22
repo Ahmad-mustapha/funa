@@ -63,16 +63,16 @@ const Users = () => {
             </div>
           </div>
         </div>
-        <section className='mt-6 overflow-x-auto lg:overflow-x-hidden'>
+        <section className='mt-6 overflow-x-auto'>
           <table className='w-full'>
-              <tr className='flex items-center justify-between text-[14px]'>
-                <th className='flex items-center gap-2 pb-3'>User Name</th>
-                <th className='flex items-center gap-2 pb-3'>Email Address</th>
-                <th className='flex items-center gap-2 pb-3'>Phone No.</th>
-                <th className='flex items-center gap-2 pb-3'>Action</th>
+              <tr className='flex items-center justify-between ga-3 text-[14px]'>
+                <th className='flex items-center pb-3'>User Name</th>
+                <th className='flex items-center pb-3'>Email Address</th>
+                <th className='flex items-center pb-3'>Phone No.</th>
+                <th className='flex items-center pb-3'>Action</th>
               </tr>
               {Eachuserdata.map((data, index) =>(
-                <tr key={index} className='flex items-center justify-between py-4 w-full text-[12px]'>
+                <tr key={index} className='flex items-center justify-between gap-3 py-4 w-full text-[12px]'>
                   <td className='flex gap-2'><span className='bg-[#2C8CFB] p-1 px-[5px] rounded-md text-[12px]'>LV</span>{data.name}</td>
                   <td>{data.email}</td>
                   <td>{data.number}</td>
