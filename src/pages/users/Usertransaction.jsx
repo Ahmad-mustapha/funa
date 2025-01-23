@@ -15,8 +15,8 @@ const Usertransaction = () => {
     const { id } = useParams()
     const { state } = useLocation()
     return (
-        <div className='flex gap-4 p-10 items justify-center'>
-            <section className='w-[330px] xl:w-[350px]'>
+        <div className='flex gap-6 p-10 flex-wrap lg:flex-nowrap justify-center bg-[#F9FBFC]'>
+            <section className='w-full md:w-[330px] xl:w-[350px]'>
                 <div className='bg-white rounded-xl p-6 flex flex-col justify-between h-[90vh]'>
                     <div className='rounded-xl'>
                         <div className='flex flex-col items-center gap-2'>
@@ -32,7 +32,7 @@ const Usertransaction = () => {
                     <div className='w-full'><button className='w-full flex items-center gap-2 mt-10 border-[1px] rounded-xl p-4 justify-center'><TbUserOff />blacklist this user</button></div>
                 </div>
             </section>
-            <section className='bg-white rounded-xl p-10 w-4/6 flex flex-col justify-between'>
+            <section className='bg-white rounded-xl px-6 md:px-10 p-10 w-full md:w-4/6 flex flex-col justify-between'>
                 <div className='flex items-start text-[#2C8CFB]'><Link to={`/users/${id}`} className='flex items-center gap-2'><FaArrowLeft /> Back to Page</Link></div>
                 <p className='text-[1.3rem] font-[600] my-4'>Transaction Details</p>
                 <section className='mt-8 flex justify-between'>
@@ -44,11 +44,11 @@ const Usertransaction = () => {
                         <p className='flex items-center gap-2 font-[600]'><MdOutlineStairs className='text-[1.3rem]'/> Status</p>
                     </div>
                     <div className='flex flex-col gap-4'>
-                        <p className='flex items-center gap-2'>d3-7ea471789ebe</p>
-                        <p className='flex items-center gap-2'>mikexenon23@yahoo.com</p>
-                        <p className='flex items-center gap-2'>mikexenon23@yahoo.com</p>
-                        <p className='flex items-center gap-2'>N20000</p>
-                        <p className='flex items-center gap-2'>Success</p>
+                        <p>d3-7ea471789ebe</p>
+                        <p>mikexenon23@yahoo.com</p>
+                        <p>mikexenon23@yahoo.com</p>
+                        <p>N20000</p>
+                        <p>Success</p>
                     </div>
                 </section>
                 <div className='w-full mt-8 border-[1px] border-slate-300 p-3 rounded-lg flex items-center justify-center text-white bg-[#2C8CFB]'><button className='flex items-center justify-center gap-2 w-full'><RiDeleteBin6Line className='text-[1.3rem]'/> Delete Transaction</button></div>
