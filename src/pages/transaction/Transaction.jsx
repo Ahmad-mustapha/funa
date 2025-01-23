@@ -4,7 +4,7 @@ import { FiSearch } from "react-icons/fi";
 import { IoFilterSharp } from "react-icons/io5";
 import { BsEye } from "react-icons/bs";
 import './transaction.css'
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation, useParams } from 'react-router-dom';
 const tracsactData = [
   { id: 1, transactId: 'd3-7ea47', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
   { id: 2, transactId: 'd3-7ea47', sourceAcc: 'mikexenon23@yahoo.com', DestinAcc: 'mikexenon23@yahoo.com', amount: 'N20000' },
@@ -14,7 +14,8 @@ const tracsactData = [
 ]
 
 const Transaction = () => {
-  const { id } = useLocation()
+  const { id } = useParams()
+  const { state } = useLocation()
   return (
     <>
       <section className='mt-6 bg-white rounded-xl p-4'>
@@ -48,7 +49,7 @@ const Transaction = () => {
                 {tracsactData.map((data, index) =>(
                   <NavLink 
                   to={`/transaction/${data.id}`}
-                  state={{transactId: data.transactId, sourceAcc: data.sourceAcc, DestinAcc: data.DestinAcc, amount: data.amount}}
+                  state={{transactId: data?.transactId, sourceAcc: data?.sourceAcc, DestinAcc: data?.DestinAcc, amount: data?.amount}}
                   >
                     <tr key={index} className='row gap-6 lg:gap-0 flex items-center justify-between px-6'>
                       <td className='flex gap-2 items-center'><span className='border-[1px] rounded-md px-[.3rem]'>{data.id}</span> {data.transactId}</td>

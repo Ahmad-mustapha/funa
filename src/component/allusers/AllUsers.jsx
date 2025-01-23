@@ -2,7 +2,7 @@ import React from 'react'
 import { FiSearch } from 'react-icons/fi'
 import { IoFilter } from "react-icons/io5";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/components/ui/table';
-// import Checkbox
+// import Checkbox from '../'
 
 const tracsactData = [
     { id: 1, name: 'Ahmad S.A', regDate: '12 Feb 2024 - 12:25am', userId: 'Mendorz', email: 'ahmad12@gmail.com', number: '09023456782', },
@@ -68,21 +68,21 @@ export const AllUsers = () => {
             </table>
         </section> */}
         <Table>
-        <TableRow>
-          <TableCell className='font-[700]'>Account Name</TableCell>
-          <TableCell className='font-[700]'>Account No.</TableCell>
-          <TableCell className='font-[700]'>Bank Name</TableCell>
-          <TableCell className='font-[700]'>Description</TableCell>
-          <TableCell className='font-[700]'>Amount</TableCell>
-          <TableCell className='font-[700]'></TableCell>
-        </TableRow>
+        <TableHeader>
+          <TableHead className='font-[700]'>Account Name</TableHead>
+          <TableHead className='font-[700]'>Account No.</TableHead>
+          <TableHead className='font-[700]'>Bank Name</TableHead>
+          <TableHead className='font-[700]'>Description</TableHead>
+          <TableHead className='font-[700]'>Amount</TableHead>
+          <TableHead className='font-[700]'></TableHead>
+        </TableHeader>
         <TableBody>
           {tracsactData.map((payment) => (
             <TableRow key={payment.id}>
               <TableCell className="font-[700]">
-                <Checkbox 
-                // checked={isAllSelected} onCheckedChange={toggleAll}
-                 />
+                {/* <Checkbox 
+                checked={isAllSelected} onCheckedChange={toggleAll}
+                 /> */}
             </TableCell>
               <TableCell>{payment.name}</TableCell>
               <TableCell>{payment.regDate}</TableCell>

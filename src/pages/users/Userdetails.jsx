@@ -22,7 +22,7 @@ const Userdetails = () => {
   const { id } = useParams()
   const { state } = useLocation()
   return (
-    <div className='flex flex-col justify-center lg:flex-row items-center gap-6 px-[4rem] py-[3rem] bg-[#F9FBFC] overflow-x-hidden'>
+    <div className='flex flex-col justify-center lg:flex-row items-center lg:items-start gap-6 px-[4rem] py-[3rem] bg-[#F9FBFC] overflow-x-hidden'>
       <section className='w-full sm:w-[380px] xl:w-[420px]'>
         <div className='flex items-start bg-white p-4 pl-10 rounded-xl text-[#2C8CFB] text-[]'><Link to={`/users`} className='flex items-center gap-2'><FaArrowLeft /> Back to Page</Link></div>
           <div className='bg-white rounded-xl p-6 mt-4 flex flex-col justify-between h-[75vh]'>
@@ -47,53 +47,53 @@ const Userdetails = () => {
           <div className='w-full'><button className='w-full flex items-center gap-2 mt-10 border-[1px] rounded-xl p-4 justify-center'><TbUserOff />blacklist this user</button></div>
         </div>
       </section>
-        <section className='w-5/6 md:w-4/6 bg-white rounded-xl'>
-          <div className='flex items-center justify-between flex-wrap gap-4 lg:flex-nowrap w-full p-[1.3rem]'>
-            <p className='uppercase font-[700] text-[19px]'>transaction by this user</p>
-            <div className='flex items-center flex-wrap gap-2'>
-              <div className='relative w-full sm:w-[180px]'>
-                <input 
-                placeholder='Search transaction'
-                type="text" 
-                className='w-full border-[1px] border-slate-300 rounded-xl p-[.5rem] pl-8'/>
-                <FiSearch className='absolute top-3 left-2 text-[1.1rem] font-[600]'/>
-              </div>
-              <div className='relative w-full sm:w-[130px]'>
-                <select name="" id="" className='w-full relative border-[1px] border-slate-300 rounded-xl p-[.5rem]'>
-                  <option value="">Monthly</option>
-                  <option value=""></option>
-                </select>
-              </div>
+      <section className='w-5/6 md:w-4/6 bg-white rounded-xl'>
+        <div className='flex items-center justify-between flex-wrap gap-4 lg:flex-nowrap w-full p-[1.3rem]'>
+          <p className='uppercase font-[700] text-[19px]'>transaction by this user</p>
+          <div className='flex items-center flex-wrap gap-2'>
+            <div className='relative w-full sm:w-[180px]'>
+              <input 
+              placeholder='Search transaction'
+              type="text" 
+              className='w-full border-[1px] border-slate-300 rounded-xl p-[.5rem] pl-8'/>
+              <FiSearch className='absolute top-3 left-2 text-[1.1rem] font-[600]'/>
+            </div>
+            <div className='relative w-full sm:w-[130px]'>
+              <select name="" id="" className='w-full relative border-[1px] border-slate-300 rounded-xl p-[.5rem]'>
+                <option value="">Monthly</option>
+                <option value=""></option>
+              </select>
             </div>
           </div>
-          <div className='overflow-x-auto mt-6 p-[1.3rem]'>
-            <table className='w-full'>
-                <tr className='flex items-center justify-between gap-4 bg-[#F9FBFC] rounded-[100px] px-6 p-[.8rem] border-0'>
-                  <th>Transact ID</th>
-                  <th>Sourse Acct</th>
-                  <th>Destination Acct Type</th>
-                  <th>Amout</th>
-                  <th></th>
-                </tr>
-                <tbody>
-                  {tracsactData.map((data, index) =>(
-                    <NavLink 
-                    to={`/users/${data.id}/usertransaction`}
-                    state={{transactId: data.transactId, sourceAcc: data.sourceAcc, DestinAcc: data.DestinAcc, amount: data.amount}}
-                    >
-                      <tr key={index} className='row flex items-center justify-between gap-4 px-6'>
-                        <td className='flex gap-2 items-center'><span className='border-[1px] rounded-md px-[.3rem]'>{data.id}</span> {data.transactId}</td>
-                        <td>{data.sourceAcc}</td>
-                        <td>{data.DestinAcc}</td>
-                        <td>{data.amount}</td>
-                        <td className='font-[700] text-[1.1rem]'>...</td>
-                      </tr>
-                    </NavLink>
-                  ))}
-                </tbody>
-            </table>
-          </div>
-        </section>
+        </div>
+        <div className='overflow-x-auto mt-6 p-[1.3rem]'>
+          <table className='w-full'>
+              <tr className='flex items-center justify-between gap-4 bg-[#F9FBFC] rounded-[100px] px-6 p-[.8rem] border-0'>
+                <th>Transact ID</th>
+                <th>Sourse Acct</th>
+                <th>Destination Acct Type</th>
+                <th>Amout</th>
+                <th></th>
+              </tr>
+              <tbody>
+                {tracsactData.map((data, index) =>(
+                  <NavLink 
+                  to={`/users/${data.id}/usertransaction`}
+                  state={{transactId: data.transactId, sourceAcc: data.sourceAcc, DestinAcc: data.DestinAcc, amount: data.amount}}
+                  >
+                    <tr key={index} className='row flex items-center justify-between gap-4 px-6'>
+                      <td className='flex gap-2 items-center'><span className='border-[1px] rounded-md px-[.3rem]'>{data.id}</span> {data.transactId}</td>
+                      <td>{data.sourceAcc}</td>
+                      <td>{data.DestinAcc}</td>
+                      <td>{data.amount}</td>
+                      <td className='font-[700] text-[1.1rem]'>...</td>
+                    </tr>
+                  </NavLink>
+                ))}
+              </tbody>
+          </table>
+        </div>
+      </section>
         
     </div>
   )

@@ -15,7 +15,7 @@ import { TbUserOff } from 'react-icons/tb';
 const TransactionId = () => {
     const { id } = useParams()
     const { state } = useLocation()
-    console.log(state);
+    console.log(state, id);
     
   return (
     <div className='flex gap-4 p-10 justify-center bg-[#F9FBFC]'>
@@ -47,10 +47,10 @@ const TransactionId = () => {
                     <p className='flex items-center gap-2 font-[600]'><MdOutlineStairs className='text-[1.3rem]'/> Status</p>
                 </div>
                 <div className='flex flex-col gap-4'>
-                    {/* <p className='flex items-center gap-2'>{state.transactId}</p>
-                    <p className='flex items-center gap-2'>{state.sourceAcc}</p>
-                    <p className='flex items-center gap-2'>{state.DestinAcc}</p>
-                    <p className='flex items-center gap-2'>{state.amount}</p> */}
+                    <p className='flex items-center gap-2'>{state?.transactId}</p>
+                    <p className='flex items-center gap-2'>{state?.sourceAcc}</p>
+                    <p className='flex items-center gap-2'>{state?.DestinAcc}</p>
+                    <p className='flex items-center gap-2'>{state?.amount}</p>
                     <p className='flex items-center gap-2'>Success</p>
                 </div>
             </section>
