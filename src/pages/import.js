@@ -1,5 +1,6 @@
 export { default as Dashboard } from '../pages/dashboard/Dashboard'
 export { default as Transaction } from '../pages/transaction/Transaction'
+export { default as Product } from '../pages/product/Product'
 export { default as TransactionId } from '../pages/transaction/TransactionId'
 export { default as Customerdetails } from '../pages/transaction/Customerdetails'
 export { default as Users } from '../pages/users/Users'

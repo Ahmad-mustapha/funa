@@ -5,7 +5,7 @@ import Verified from '../../assets/verified.png'
 import Pending from '../../assets/pending.png'
 import NewUserBarChart from '../../component/charts/NewUserBarChart'
 import ActiveUseBarChart from '../../component/charts/ActiveUseBarChart'
-import AllUsers from '../../component/allusers/AllUsers'
+import Datatable from '../../component/datatable/Datatable'
 
 const userData = [
   { id: 1, title: 'Total Subscription', num: 207, image: Total },
@@ -50,7 +50,7 @@ const Kyc = () => {
         <ActiveUseBarChart />
       </section>
       <section>
-        <AllUsers />
+        <Datatable />
       </section>
     </div>
   )

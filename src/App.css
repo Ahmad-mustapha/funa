@@ -5,6 +5,9 @@
 .list{
     position: relative;
 }
+body{
+    background-color: #F9FBFC;
+}
 .list::before{
     content: '';
     position: absolute;

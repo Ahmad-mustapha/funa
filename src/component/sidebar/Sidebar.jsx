@@ -12,24 +12,25 @@ import './sidebar.css'
 
 const navLinks = [
   {id: 1, text: 'Dashboard', icon: <MdOutlineDashboard />, link: '/'},
+  {id: 1, text: 'Product', icon: <MdOutlineDashboard />, link: '/product'},
   {id: 2, text: 'Transaction', icon: <TbTransform />, link: '/transaction'},
   {id: 3, text: 'Users', icon: <CiUser />, link: '/users'},
   {id: 4, text: 'KYC', icon: <CiUser />, link: '/kyc'},
   {id: 5, text: 'Payout', icon: <TbTransferIn />, link: '/payout'},
   {id: 6, text: 'Team', icon: <GoPeople />, link: '/team'},
   {id: 7, text: 'Setting', icon: <IoSettingsOutline />, link: '/settings'},
-  {id: 8, text: 'Log Out', icon: <BiLogOut />, link: '/logout'},
+  // {id: 8, text: 'Log Out', icon: <BiLogOut />, link: '/logout'},
 ]
 
 const Sidebar = () => {
   const location = useLocation()
   return (
-    <div id='sidebar' className='flex items-start flex-col px-6 py-[.8rem] h-full'>
+    <div id='sidebar' className='flex items-start justify-between flex-col px-6 py-[.8rem] h-full'>
       <div className='flex items-center gap-2'>
         <div><img src={Profileimage2} alt="" /></div>
         <p className='font-[700] text-[1.3rem]'>Sanni Ahmed</p>
       </div>
-      <ul className='w-full h-full flex flex-col gap-[] justify-between mt-4'>
+      <ul className='w-full h-full flex flex-col gap-1 mt-4'>
         {navLinks.map((link, index) =>(
           <li 
           key={index}
@@ -37,6 +38,7 @@ const Sidebar = () => {
           ><span>{link.icon}</span><Link to={link.link} className='w-full'>{link.text}</Link></li>
         ))}
       </ul>
+      <Link to='/logout' className={`flex items-center gap-2 text-[#2C8CFB] w-full text-[1rem] py-[.4rem] px-3`}> <span><BiLogOut /></span> Log out</Link>
     </div>
   )
 }
