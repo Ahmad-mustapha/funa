@@ -33,17 +33,17 @@ const Team = () => {
           </div>
         </div>
       </div>
-      <section className='mt-6 overflow-x-auto'>
-        <table style={{width: '100%'}}  className='w-full'>
-          <tr className='flex items-center bg-[#F9FBFC] rounded-[100px] px-6 p-[.8rem] border-0'>
-            <th className='staff'>Members Names</th>
+      <section className='mt-6 overflow-x-auto sm:w-full'>
+        <table  className='w-screen md:w-full'>
+          <tr className='flex staff gap-1 items-center bg-[#F9FBFC] rounded-[100px] px-6 p-[.8rem] border-0'>
+            <th className='staff text-left'>Members Names</th>
             <th className='staff'>Email Address</th>
             <th className='staff'>Roles</th>
             <th className='staff'>Activity</th>
           </tr>
           {Eachuserdata.map((data, index) =>(
-            <tr key={index} className='flex items-center py-4 w-full text-[12px] px-6'>
-              <td className='flex gap-2 staff'><span className='bg-[#2C8CFB] p-1 px-[5px] rounded-md text-[12px]'>LV</span>{data.name}</td>
+            <tr key={index} className='flex items-center gap-1 py-4 w-full text-[12px] px-2 sm:px-6'>
+              <td className='flex gap-2 staff'><span className='bg-[#2C8CFB] p-1 px-[5px] h-[1.7rem] rounded-md text-[12px]'>LV</span>{data.name}</td>
               <td className='staff'>{data.email}</td>
               <td className='staff'>{data.role}</td>
               <td className='staff'>{data.activity}</td>
