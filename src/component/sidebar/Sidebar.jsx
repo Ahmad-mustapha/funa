@@ -8,11 +8,13 @@ import { GoPeople } from "react-icons/go";
 import { IoSettingsOutline } from "react-icons/io5";
 import { BiLogOut } from "react-icons/bi";
 import { TbTransform } from "react-icons/tb";
+import { AiOutlineProduct } from "react-icons/ai";
+
 import './sidebar.css'
 
 const navLinks = [
   {id: 1, text: 'Dashboard', icon: <MdOutlineDashboard />, link: '/'},
-  {id: 1, text: 'Product', icon: <MdOutlineDashboard />, link: '/product'},
+  {id: 1, text: 'Product', icon: <AiOutlineProduct />, link: '/products'},
   {id: 2, text: 'Transaction', icon: <TbTransform />, link: '/transaction'},
   {id: 3, text: 'Users', icon: <CiUser />, link: '/users'},
   {id: 4, text: 'KYC', icon: <CiUser />, link: '/kyc'},

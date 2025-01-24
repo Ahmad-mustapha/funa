@@ -27,7 +27,7 @@ const Product = () => {
           </div>
           <div className='relative w-[192px]'>
             <Link 
-            to={`/team/add-team-member`}
+            to={`/products/add-new-product`}
             className='w-full flex items-center gap-1 relative border-[1px] border-slate-300 rounded-md p-[.3rem] text-[14px] font-[600] justify-center'>
               <FaPlus /> Add New Product
             </Link>
@@ -45,7 +45,7 @@ const Product = () => {
           </tr>
           {Eachuserdata.map((data, index) =>(
             <tr key={index} className='flex items-center gap-1 py-4 w-full text-[12px] px-2 sm:px-6'>
-              <td>
+              <td className='staff'>
                 <div className='w-24'><img src={Cashew} alt="" /></div>
               </td>
               <td className='flex gap-2 staff'><span className='bg-[#2C8CFB] p-1 px-[5px] h-[1.7rem] rounded-md text-[12px]'>LV</span>{data.name}</td>

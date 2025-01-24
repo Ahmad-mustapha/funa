@@ -1,7 +1,23 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './layout/Layout'
-import { Dashboard, Kyc, Logout, Payout, Settings, Team, Transaction,TransactionId, Users, Userdetails, Usertransaction, PayoutInfo, AddTeamMember, Customerdetails, Product } from './pages/import'
+import { 
+  Dashboard, 
+  Kyc, 
+  Logout, 
+  Payout, 
+  Settings, 
+  Team, 
+  Transaction, 
+  TransactionId, 
+  Users, 
+  Userdetails, 
+  Usertransaction, 
+  PayoutInfo, 
+  AddTeamMember, 
+  Customerdetails, 
+  Product, 
+  Addnewproduct } from './pages/import'
 
 import './App.css'
 
@@ -12,7 +28,7 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path='/' element={<Dashboard />}/>
-            <Route path='/product' element={<Product />}/>
+            <Route path='/products' element={<Product />}/>
             <Route path='/transaction' element={<Transaction />}/>
             <Route path='/users' element={<Users />}/>
             <Route path='/kyc' element={<Kyc />}/>
@@ -22,6 +38,7 @@ function App() {
             <Route path='/logout' element={<Logout />}/>
           </Route>
           <Route path='/transaction/:id' element={<Customerdetails />}/>
+          <Route path='/products/add-new-product' element={<Addnewproduct />}/>
           <Route path='/transaction/:id/transaction-details' element={<TransactionId />}/>
           <Route path='/users/:id' element={<Userdetails />}/>
           <Route path='/users/:id/usertransaction' element={<Usertransaction />}/>
