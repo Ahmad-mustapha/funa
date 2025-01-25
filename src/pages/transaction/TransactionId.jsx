@@ -11,6 +11,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdOutlineEmail } from 'react-icons/md';
 import { LuPhone } from 'react-icons/lu';
 import { TbUserOff } from 'react-icons/tb';
+import { IoCheckmarkCircleOutline } from "react-icons/io5";
 
 const TransactionId = () => {
     const { id } = useParams()
@@ -54,7 +55,7 @@ const TransactionId = () => {
                     <p className='flex items-center gap-2'>Success</p>
                 </div>
             </section>
-            <div className='w-full mt-8 border-[1px] border-slate-300 p-3 rounded-lg flex items-center justify-center text-white bg-[#2C8CFB]'><button className='flex items-center justify-center gap-2 w-full'><RiDeleteBin6Line className='text-[1.3rem]'/> Delete Transaction</button></div>
+            <div className='w-full mt-8 border-[1px] border-slate-300 p-3 rounded-lg flex items-center justify-center text-white bg-[#2C8CFB]'><button className='flex items-center justify-center gap-2 w-full'><IoCheckmarkCircleOutline className='text-[1.3rem]'/>Submit</button></div>
         </section>
     </div>
   )
