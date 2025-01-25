@@ -51,7 +51,7 @@ const Addnewproduct = () => {
                         }
                     </tbody>
                 </table>
-                <div className='w-full mt-8 border-[1px] border-slate-300 p-3 rounded-lg flex items-center justify-center text-white bg-[#2C8CFB]'><button className='flex items-center justify-center gap-2 w-full'><IoCheckmarkCircleOutline className='text-[1.3rem]'/>Submit</button></div>
+                <div className='w-full mt-8 border-[1px] border-slate-300 p-3 rounded-lg flex items-center justify-center text-white bg-[#2C8CFB]'><button className='flex items-center justify-center gap-2 w-full'><IoCheckmarkCircleOutline className='text-[1.3rem]'/>Add Product</button></div>
             </div>
            </div>
         </section>

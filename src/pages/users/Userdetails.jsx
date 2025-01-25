@@ -8,6 +8,7 @@ import { LuPhone } from "react-icons/lu";
 import { TbUserOff } from "react-icons/tb";
 import { FiFilter } from 'react-icons/fi';
 import { FiSearch } from 'react-icons/fi';
+import { HiDotsHorizontal } from "react-icons/hi";
 
 
 const tracsactData = [
@@ -77,18 +78,21 @@ const Userdetails = () => {
               </tr>
               <tbody>
                 {tracsactData.map((data, index) =>(
-                  <NavLink 
-                  to={`/users/${data.id}/usertransaction`}
-                  state={{transactId: data.transactId, sourceAcc: data.sourceAcc, DestinAcc: data.DestinAcc, amount: data.amount}}
-                  >
                     <tr key={index} className='row flex items-center justify-between gap-4 px-6'>
                       <td className='flex gap-2 items-center'><span className='border-[1px] rounded-md px-[.3rem]'>{data.id}</span> {data.transactId}</td>
                       <td>{data.sourceAcc}</td>
                       <td>{data.DestinAcc}</td>
                       <td>{data.amount}</td>
-                      <td className='font-[700] text-[1.1rem]'>...</td>
+                      <td className='font-[700] text-[1.1rem]'>
+                        <NavLink 
+                        to={`/users/${data.id}/usertransaction`}
+                        state={{transactId: data.transactId, sourceAcc: data.sourceAcc, DestinAcc: data.DestinAcc, amount: data.amount}}
+                        >
+                        <HiDotsHorizontal />
+                        </NavLink>
+                      </td>
                     </tr>
-                  </NavLink>
+                  
                 ))}
               </tbody>
           </table>

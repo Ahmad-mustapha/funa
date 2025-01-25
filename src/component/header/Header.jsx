@@ -48,12 +48,12 @@ export const Sidebarsm = ({ setShowMenu }) => {
   )
 }
 
-const Header = () => {
+const Header = ({text }) => {
   const [ showMenu, setShowMenu ] = useState(false)
   return (
     <div className='z-50 h-[5rem] bg-white shadow-md fixed w-full top-0 py-6 px-8 sm:px-16 flex items-center justify-between'>
       <div className='w-[8rem] sm:w-[10rem] md:w-[12rem]'><img className='w-full' src={Logo} alt="" /></div>
-      <div><h1 className='hidden md:block font-[700] text-[1.3rem]'>Dashboard</h1></div>
+      <div><h1 className='hidden md:block font-[700] text-[1.3rem]'>{text}</h1></div>
       <div></div>
       <div className='flex items-center gap-4'>
         <span className='w-[3rem] rounded-full'><img className='w-full' src={ProfileImage} alt="" /></span>
