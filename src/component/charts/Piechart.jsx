@@ -34,7 +34,7 @@ export function Component() {
                   y={y}
                   textAnchor="middle"
                   dominantBaseline="middle"
-                  fill="#000"
+                  fill="#fff"
                   fontSize="16px"
                   fontWeight="bold"
                 >

@@ -39,15 +39,15 @@ const Dashboard = () => {
             </select>
           </div>
         </div>
-        <div className='flex items-center justify-between p-4'>
-          <Component />
-            <ul className='flex flex-col gap-[.5rem] text-[18px]'>
-              <li className='list'>Payment Withdrawal</li>
-              <li className='list'>Withdrawal Comleted</li>
-              <li className='list'>Cash Added</li>
-            </ul> 
+        <div className='flex items-center flex-wrap md:flex-nowrap justify-between p-4'>
+          <div className='mx-auto md:mx-0'> <Component /></div>
+          <ul className='flex flex-col gap-[.5rem] text-[18px]'>
+            <li className='list'>Payment Withdrawal</li>
+            <li className='list'>Withdrawal Comleted</li>
+            <li className='list'>Cash Added</li>
+          </ul> 
         </div>
-        <div className='flex items-center justify-end gap-[.9rem] text-[16px]'>
+        <div className='flex items-center justify-end gap-[.9rem] text-[16px] mt-6'>
           <div className='flex gap-[.9rem] items-center'>
             <input 
             className='w-6 h-6 rounded-full border-2 border-gray-700'

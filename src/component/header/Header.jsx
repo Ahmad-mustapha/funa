@@ -7,10 +7,6 @@ import { CiSearch } from "react-icons/ci";
 import { FaRegBell } from "react-icons/fa6";
 import { FiMenu } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
-import Sidebar from '../sidebar/Sidebar'
-
-
-
 import Profileimage2 from '../../assets/profileimg2.png'
 import { MdOutlineDashboard } from "react-icons/md";
 import { TbTransferIn } from "react-icons/tb";
@@ -29,13 +25,17 @@ const navLinks = [
   {id: 5, text: 'Payout', icon: <TbTransferIn />, link: '/payout'},
   {id: 6, text: 'Team', icon: <GoPeople />, link: '/team'},
   {id: 7, text: 'Setting', icon: <IoSettingsOutline />, link: '/settings'},
-  {id: 8, text: 'Log Out', icon: <BiLogOut />, link: '/logout'},
+  // {id: 8, text: 'Log Out', icon: <BiLogOut />, link: '/logout'},
 ]
 
-const Sidebarsm = ({ setShowMenu }) => {
+export const Sidebarsm = ({ setShowMenu }) => {
   return (
-    // <div id='sidebar' className='flex items-start flex-col px-6 py-[.8rem] h-full'>
-      <ul className='w-full flex flex-col justify-between h-full p-8 pl-4 bg-slate-300 rounded-xl'>
+    <div id='' className='flex items-start flex-col justify-between px-6 py-[.8rem] h-full bg-white overflow-y-auto'>
+      <div className='flex items-center gap-2 mb-6'>
+        <div><img src={Profileimage2} alt="" /></div>
+        <p className='font-[700] text-[1.3rem]'>Sanni Ahmed</p>
+      </div>
+      <ul className='w-full flex flex-col h-full justify-between p-4 pl-4 rounded-xl'>
         {navLinks.map((link, index) =>(
           <li 
           key={index}
@@ -43,7 +43,8 @@ const Sidebarsm = ({ setShowMenu }) => {
           ><span>{link.icon}</span><Link onClick={()=> setShowMenu(false)} to={link.link} className='w-full'>{link.text}</Link></li>
         ))}
       </ul>
-    // </div>
+      <Link to='/logout' className={`flex items-center gap-2 text-[#2C8CFB] w-full text-[1rem] py-[.4rem] px-3 mt-6`}> <span><BiLogOut /></span> Log out</Link>
+    </div>
   )
 }
 
