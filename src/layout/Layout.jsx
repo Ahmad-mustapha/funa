@@ -35,8 +35,11 @@ const Layout = () => {
       case '/logout':
         headerText = 'Log out';
         break;
+      case '/settings':
+        headerText = 'Settings';
+        break;
     default:
-      headerText = 'Upcoming matches';
+      headerText = 'Dashboard';
   }
   return (
     <div className='overflow-x-hidden bg-[#F9FBFC]'>

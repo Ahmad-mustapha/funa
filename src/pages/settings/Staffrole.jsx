@@ -36,7 +36,7 @@ export const Staffrole = () => {
                 </tr>
                 {Eachuserdata.map((data, index) =>(
                 <tr key={index} className='flex items-center py-4 w-full text-[12px] text-[#4F4F4F] space-x-2'>
-                    <td className='flex gap-2 staff'><span className='bg-[#2C8CFB] p-1 px-[5px] rounded-md text-[12px]'>LV</span>{data.name}</td>
+                    <td className='flex items-center gap-2 staff'><span className='bg-[#2C8CFB] h-6 p-1 px-[5px] rounded-md text-[12px]'>LV</span>{data.name}</td>
                     <td className='staff'>{data.email}</td>
                     <td className='staff'>{data.number}</td>
                     <td className='staff'>
@@ -45,7 +45,7 @@ export const Staffrole = () => {
                           <option value="">Admin</option>
                       </select>
                     </td>
-                    <td className='text-white staff'><Link className='w-full bg-[#2C8CFB] p-2 px-6 rounded-[14px]' to={``}>View Profile</Link></td>
+                    <Link className='bg-[#2C8CFB] text-center p-2 px-6 text-white w-full rounded-[14px]' to={``}>View Profile</Link>
                 </tr>
                 ))}
             </table>
