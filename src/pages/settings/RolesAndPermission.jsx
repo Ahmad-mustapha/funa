@@ -20,7 +20,9 @@ export const RolesAndPermission = () => {
         <p className='flex flex-col'>
           <span className='text-[18px] font-[700]'>Team Members</span><span className='text-[#64748B] text-[14px]'>Add new team member</span>
         </p>
-        <Link className='flex items-center gap-2 bg-[#2C8CFB] rounded-lg text-white p-2 px-6'>Add Member <FaArrowRight /></Link>
+        <Link 
+        to={`/team/add-team-member`}
+        className='flex items-center gap-2 bg-[#2C8CFB] rounded-lg text-white p-2 px-6'>Add Member <FaArrowRight /></Link>
       </div>
       <div className='mt-6'>
         <button 
