@@ -22,7 +22,7 @@ const Login = () => {
             className='border-[1px] rounded-lg p-1 w-full'
             type="password" />
           </div>
-          {/* <div className="text-right text-red-500 text-[.7rem] underline font-bold"><Link>Forget password</Link></div> */}
+          <div className="text-right text-red-500 text-[.7rem] underline font-bold"><Link>Forget password</Link></div>
         </div>
       </form>
     </div>
