@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './layout/Layout'
+import { Navigate } from 'react-router-dom'
 import { 
   Dashboard, 
   Kyc, 
@@ -17,6 +18,7 @@ import {
   AddTeamMember, 
   Customerdetails, 
   Product, 
+  Login,
   Addnewproduct } from './pages/import'
 
 import './App.css'
@@ -44,6 +46,10 @@ function App() {
           <Route path='/users/:id/usertransaction' element={<Usertransaction />}/>
           <Route path='/payout/:id' element={<PayoutInfo />}/>
           <Route path='/team/add-team-member' element={<AddTeamMember />}/>
+
+          <Route path='/login' element={<Login />}/>
+
+          <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </BrowserRouter>
     </>
