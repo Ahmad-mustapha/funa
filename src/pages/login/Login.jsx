@@ -10,9 +10,7 @@ const Login = () => {
   const [ showPassword, setShowPassword ] = useState(true)
 
   const handlePassword = () =>{
-    if (type === 'password') {
-      setShowPassword(!showPassword)
-    }
+    
   }
   return (
     <div className='flex items-center justify-center flex-col h-screen bg-[#F9FBFC]'>
