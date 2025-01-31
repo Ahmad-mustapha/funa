@@ -38,7 +38,7 @@ const Addnewproduct = () => {
            </div>
            <div>
             <div>
-                <table className='w-4/6 mt-8'>
+                <table className='w-full sm:w-4/6 mt-8'>
                     <tbody className=''>
                         {
                             productData.map((data, index) =>(

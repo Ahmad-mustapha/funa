@@ -15,10 +15,12 @@ import { GoPeople } from "react-icons/go";
 import { IoSettingsOutline } from "react-icons/io5";
 import { BiLogOut } from "react-icons/bi";
 import { TbTransform } from "react-icons/tb";
+import { AiOutlineProduct } from "react-icons/ai";
 
 
 const navLinks = [
   {id: 1, text: 'Dashboard', icon: <MdOutlineDashboard />, link: '/'},
+  {id: 2, text: 'Products', icon: <AiOutlineProduct />, link: '/products'},
   {id: 2, text: 'Transaction', icon: <TbTransform />, link: '/transaction'},
   {id: 3, text: 'Users', icon: <CiUser />, link: '/users'},
   {id: 4, text: 'KYC', icon: <CiUser />, link: '/kyc'},
@@ -55,10 +57,10 @@ const Header = ({text }) => {
       <div className='w-[8rem] sm:w-[10rem] md:w-[12rem]'><img className='w-full' src={Logo} alt="" /></div>
       <div><h1 className='hidden md:block font-[700] text-[1.3rem]'>{text}</h1></div>
       <div></div>
-      <div className='flex items-center gap-4'>
-        <span className='w-[3rem] rounded-full'><img className='w-full' src={ProfileImage} alt="" /></span>
+      <div className='flex items-center gap-2 md:gap-4'>
+        <span className='w-[2rem] md:w-[3rem] rounded-full'><img className='w-full' src={ProfileImage} alt="" /></span>
         <span className='hidden md:flex'>Sanni Ahmed Agboola</span>
-        <span><CiSearch className='text-[1.7rem] font-[500]'/></span>
+        <span><CiSearch className='hidden md:flex text-[1.7rem] font-[500]'/></span>
         <span className='relative'><FaRegBell className='text-[1.7rem] font-[500]'/><span className='absolute -bottom-1 bg-red-600 rounded-full text-[.75rem] font-[700] px-[.32rem] text-white right-0'>1</span></span>
       </div>
       <div className='flex lg:hidden z-50'>

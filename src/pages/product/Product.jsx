@@ -25,7 +25,7 @@ const Product = () => {
             className='w-full border-[1px] border-slate-300 rounded-md p-[.3rem] pl-8 text-[14px]'/>
             <FiSearch className='absolute top-2 left-2 text-[1.1rem] font-[600]'/>
           </div>
-          <div className='relative w-[192px]'>
+          <div className='relative w-full sm:w-[192px]'>
             <Link 
             to={`/products/add-new-product`}
             className='w-full flex items-center gap-1 relative border-[1px] border-slate-300 rounded-md p-[.3rem] text-[14px] font-[600] justify-center'>
