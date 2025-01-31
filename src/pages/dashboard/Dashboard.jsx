@@ -28,26 +28,26 @@ const Dashboard = () => {
       <section className='bg-white rounded-lg p-8 mt-8'>
         <div className='flex items-center justify-between flex-wrap sm:flex-nowrap'>
           <p className='text-[1.3rem] font-[600] mb-4'>Current Statistics</p>
-          <div className='flex items-center gap-2'>
-            <select name="" id="" className='rounded-xl py-3 px-5 border-[1px] border-gray-200 outline-none'>
+          <div className='flex items-center gap-2 flex-wrap sm:flex-nowrap w-full'>
+            <select name="" id="" className='rounded-xl py-3 px-3 w-full border-[1px] border-gray-200 outline-none'>
               <option value="">Cashflow</option>
               <option value=""></option>
             </select>
-            <select name="" id="" className='rounded-xl py-3 px-5 border-[1px] border-gray-200 outline-none'>
+            <select name="" id="" className='rounded-xl py-3 px-3 w-full border-[1px] border-gray-200 outline-none'>
               <option value="">Monthly</option>
               <option value=""></option>
             </select>
           </div>
         </div>
-        <div className='flex items-center flex-wrap md:flex-nowrap justify-between p-4'>
+        <div className='flex items-center flex-wrap md:flex-nowrap justify-between'>
           <div className='mx-auto md:mx-0'> <Component /></div>
-          <ul className='flex flex-col gap-[.5rem] text-[18px]'>
+          <ul className='flex flex-col gap-[.5rem] text-[18px] p-4'>
             <li className='list'>Payment Withdrawal</li>
             <li className='list'>Withdrawal Comleted</li>
             <li className='list'>Cash Added</li>
           </ul> 
         </div>
-        <div className='flex items-center justify-start flex-wrap sm:justify-end sm:flex-nowrap gap-[.9rem] text-[16px] mt-6'>
+        <div className='flex items-center justify-start flex-wrap sm:justify-end sm:flex-nowrap gap-[.9rem] text-[16px] mt-6 p-4'>
           <div className='flex gap-[.9rem] items-center'>
             <input 
             className='w-6 h-6 rounded-full border-2 border-gray-700'
