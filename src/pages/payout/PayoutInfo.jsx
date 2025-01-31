@@ -9,7 +9,7 @@ const PayoutInfo = () => {
   const { id } = useParams()
   const { state } = useLocation()
   return (
-    <div className='sm:w-4/6 lg:w-3/6 my-10 mx-auto'>
+    <div className='w-5/6 sm:w-4/6 lg:w-3/6 my-10 mx-auto'>
       <section className='flex bg-white  flex-col gap-6 p-8 w-full rounded-xl'>
         <div className='flex items-start text-[#2C8CFB]'><Link to={`/payout`} className='flex items-center gap-2'><FaArrowLeft /> Back to Page</Link></div>
         <p className='text-[20px] font-[600]'>Investment Wallet Information</p>
