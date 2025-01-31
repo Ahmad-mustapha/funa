@@ -33,10 +33,10 @@ const Login = () => {
             type="password" />
             {
             showPassword ? <FaRegEye
-            onClick={handlePassword}
+            // onClick={handlePassword}
             className='absolute top-8 right-2'/> : 
             <FaRegEyeSlash
-            onClick={handlePassword}
+            // onClick={handlePassword}
             className='absolute top-8 right-2'/>
             }
           </div>

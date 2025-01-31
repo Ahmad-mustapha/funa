@@ -19,7 +19,7 @@ const Transaction = () => {
   return (
     <>
       <section className='mt-6 bg-white rounded-xl p-4'>
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between flex-wrap sm:flex-nowrap'>
           <p className='text-[1.3rem] font-[600] mb-4'>Transaction History</p>
           <div className='flex items-center gap-3'>
             <div className='relative w-[150px]'><input 

@@ -14,8 +14,8 @@ const customertransaction = [
 
 const Customerdetails = () => {
   return (
-    <div className='flex gap-4 p-10 justify-center bg-[#F9FBFC]'>
-        <section className='w-[330px] xl:w-[350px]'>
+    <div className='flex gap-4 p-10 justify-center flex-wrap md:flex-nowrap bg-[#F9FBFC]'>
+        <section className='w-5/6 md:w-[330px] xl:w-[350px]'>
             <div className='bg-white rounded-xl p-6 flex flex-col justify-between h-[90vh]'>
                 <div className='rounded-xl'>
                     <div className='flex flex-col items-center gap-2'>

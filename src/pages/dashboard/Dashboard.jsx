@@ -26,7 +26,7 @@ const Dashboard = () => {
         <Summary />
       </section>
       <section className='bg-white rounded-lg p-8 mt-8'>
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between flex-wrap sm:flex-nowrap'>
           <p className='text-[1.3rem] font-[600] mb-4'>Current Statistics</p>
           <div className='flex items-center gap-2'>
             <select name="" id="" className='rounded-xl py-3 px-5 border-[1px] border-gray-200 outline-none'>
@@ -47,7 +47,7 @@ const Dashboard = () => {
             <li className='list'>Cash Added</li>
           </ul> 
         </div>
-        <div className='flex items-center justify-end gap-[.9rem] text-[16px] mt-6'>
+        <div className='flex items-center justify-start flex-wrap sm:justify-end sm:flex-nowrap gap-[.9rem] text-[16px] mt-6'>
           <div className='flex gap-[.9rem] items-center'>
             <input 
             className='w-6 h-6 rounded-full border-2 border-gray-700'
