@@ -43,7 +43,7 @@ const Dashboard = () => {
           <div className='mx-auto md:mx-0'> <Component /></div>
           <ul className='flex flex-col gap-[.5rem] text-[18px] p-4'>
             <li className='list'>Payment Withdrawal</li>
-            <li className='list'>Withdrawal Comleted</li>
+            <li className='list'>Withdrawal Completed</li>
             <li className='list'>Cash Added</li>
           </ul> 
         </div>

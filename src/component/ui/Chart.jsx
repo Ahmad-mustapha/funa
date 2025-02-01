@@ -9,7 +9,7 @@ export function ChartTooltip({ content }) {
   return <Tooltip content={content} />;
 }
 
-export function ChartTooltipContent({ nameKey, hideLabel }) {
+export function ChartTooltipContent({ nameKey, hideLabel }) {c
   return ({ payload }) => {
     if (!payload || !payload.length) return null;
 

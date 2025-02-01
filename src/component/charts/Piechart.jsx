@@ -42,14 +42,16 @@ export function Component() {
             nameKey="browser"
             cx="50%"
             cy="50%"
+            stroke="none"
+            strokeWidth={0}
             outerRadius={radius} // ✅ Now using dynamic radius
             fill="#8884d8"
             label={({ value, cx, cy, midAngle, innerRadius, outerRadius }) => {
               const RADIAN = Math.PI / 180;
               // Calculate the label's position
-              const radius = outerRadius - 40; // Adjust label positioning dynamically
-              const x = cx + radius * Math.cos(-midAngle * RADIAN);
-              const y = cy + radius * Math.sin(-midAngle * RADIAN);
+              const adjustedRadius = outerRadius * 0.5; // ✅ Adjust label position based on size
+              const x = cx + adjustedRadius * Math.cos(-midAngle * RADIAN);
+              const y = cy + adjustedRadius * Math.sin(-midAngle * RADIAN);
 
               return (
                 <text

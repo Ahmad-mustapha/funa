@@ -19,10 +19,10 @@ const Customerdetails = () => {
           <div className='flex items-start text-[#2C8CFB] bg-white p-3 rounded-xl'><Link to={`/transaction`} className='flex items-center gap-2'><FaArrowLeft /> Back to Page</Link></div>
           <div className='bg-white rounded-xl p-6 flex flex-col justify-between h-[90vh]'>
               <div className='rounded-xl'>
-                  <div className='flex flex-col items-center gap-2'>
-                    <span className='bg-[#2C8CFB] p-1 px-[5px] rounded-md text-[18px] text-white font-bold'>LV</span>
-                    <span className='font-[600]'>Louis Vuitton</span>
-                  </div>
+                <div className='flex flex-col items-center gap-2'>
+                  <span className='bg-[#2C8CFB] p-1 px-[5px] rounded-md text-[18px] text-white font-bold'>LV</span>
+                  <span className='font-[600]'>Louis Vuitton</span>
+                </div>
               </div>
               <div className='flex flex-col gap-4 text-slate-500'>
                   <p className='flex items-center gap-2 font-[600]'>mike xenon</p>
