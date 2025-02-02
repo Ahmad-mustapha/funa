@@ -5,11 +5,6 @@ const Investment = [
     {id: 1, name: 'Reject'},
     {id: 1, name: 'Modify'},
 ]
-const kyc = [
-    {id: 1, name: 'Approve'},
-    {id: 1, name: 'Reject'},
-    {id: 1, name: 'Modify'},
-]
 
 export const InvestmentPermission = () => {
   return (
