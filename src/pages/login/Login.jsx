@@ -9,9 +9,6 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 const Login = () => {
   const [ showPassword, setShowPassword ] = useState(true)
 
-  const handlePassword = () =>{
-    
-  }
   return (
     <div className='flex items-center justify-center flex-col h-screen bg-[#F9FBFC]'>
       <div className='flex flex-col items-center justify-center gap-4'>
@@ -33,10 +30,8 @@ const Login = () => {
             type="password" />
             {
             showPassword ? <FaRegEye
-            // onClick={handlePassword}
             className='absolute top-8 right-2'/> : 
             <FaRegEyeSlash
-            // onClick={handlePassword}
             className='absolute top-8 right-2'/>
             }
           </div>
