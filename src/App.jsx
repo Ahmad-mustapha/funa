@@ -21,12 +21,24 @@ import {
   Login,
   Addnewproduct } from './pages/import'
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import './App.css'
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <ToastContainer 
+          position="top-right"
+          autoClose={3000} // Toast disappears after 3 seconds
+          hideProgressBar={false}
+          closeOnClick
+          pauseOnHover
+          draggable
+          theme="dark"
+        />
         <Routes>
           <Route element={<Layout />}>
             <Route path='/' element={<Dashboard />}/>
