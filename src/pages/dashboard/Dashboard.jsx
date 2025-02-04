@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Component } from '../../component/charts/Piechart'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 
 const summaryData = [
   {id: 1, title: 'Total Balance', amount: 'N200,000'},
@@ -52,10 +53,18 @@ const Dashboard = () => {
         });
 
         setDashboardData(response.data.data);
-        console.log(response)
+        console.log(response.data)
         setLoading(false);
       } catch (err) {
-        setError(err.message);
+        // setError(err.message);
+        const errorMessage =
+        "Internal Server Error. Please try again later.";
+
+        toast.error(errorMessage, {
+        position: "top-right",
+        autoClose: 4000,
+        theme: "colored",
+      });
         setLoading(false);
       }
     };
