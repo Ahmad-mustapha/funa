@@ -68,8 +68,8 @@ const rows = [
   },
 ];
 
-console.log(columns);
-console.log(rows);
+// console.log(columns);
+// console.log(rows);
 
 const paginationModel = { page: 0, pageSize: 5 };
 

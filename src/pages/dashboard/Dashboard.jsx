@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Component } from '../../component/charts/Piechart'
+import axios from 'axios'
 
 const summaryData = [
   {id: 1, title: 'Total Balance', amount: 'N200,000'},
@@ -7,23 +8,110 @@ const summaryData = [
   {id: 3, title: 'Daily Transaction', amount: 'N200,000'}
 ]
 
-export const Summary = () =>(
-  <ul className='flex items-center gap-6 justify-center flex-wrap xl:justify-start xl:flex-nowrap'>
-    {summaryData.map((data, index) =>(
-      <li key={index} className='min-w-[15.5rem] xl:w-full flex flex-col items-center justify-center gap-2 p-6 px-10 rounded-xl border-[1px] border-gray-200'>
-        <span className='font-[400] text-[14px]'>{data.title}</span><span className='font-[600] text-[30px]'>{data.amount}</span>
-      </li>
-    ))}
-  </ul>
-)
+// export const Summary = () =>(
+//   <ul className='flex items-center gap-6 justify-center flex-wrap xl:justify-start xl:flex-nowrap'>
+//     {summaryData.map((data, index) =>(
+//       <li key={index} className='min-w-[15.5rem] xl:w-full flex flex-col items-center justify-center gap-2 p-6 px-10 rounded-xl border-[1px] border-gray-200'>
+//         <span className='font-[400] text-[14px]'>{data.title}</span><span className='font-[600] text-[30px]'>{data.amount}</span>
+//       </li>
+//     ))}
+//   </ul>
+// )
 
 
 const Dashboard = () => {
+
+  const [dashboardData, setDashboardData] = useState({
+    total_transactions: 0,
+    total_revenue: 0,
+    total_users: 0,
+    total_staffs: 0,
+    total_shipments: 0,
+    shipment_in_transit: 0,
+    delivered_shipment: 0,
+    canceled_shipment: 0
+  });
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchDashboardData = async () => {
+      try {
+        const token = localStorage.getItem('accessToken');
+        
+        if (!token) {
+          throw new Error('No access token found');
+        }
+
+        const response = await axios.get('https://api.baronsandqueens.com/api/admin/dashboard-overview', {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/json'
+          }
+        });
+
+        setDashboardData(response.data.data);
+        console.log(response)
+        setLoading(false);
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
+    };
+
+    fetchDashboardData();
+  }, []);
+
+  const summaryData = [
+    { 
+      id: 1, 
+      title: 'Total Transactions', 
+      amount: `${dashboardData.total_transactions}`
+    },
+    { 
+      id: 2, 
+      title: 'Total Users', 
+      amount: `${dashboardData.total_users}`
+    },
+    { 
+      id: 3, 
+      title: 'Total Revenue', 
+      amount: `N${dashboardData.total_revenue}`
+    }
+  ];
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        Loading...
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-red-500 text-center p-4">
+        Error: {error}
+      </div>
+    );
+  }
+
   return (
     <div>
       <section className='p-8 rounded-lg bg-white'>
         <p className='text-[1.3rem] font-[600] mb-4'>User Summary</p>
-        <Summary />
+        <ul className='flex items-center gap-6 justify-center flex-wrap xl:justify-start xl:flex-nowrap'>
+          {summaryData.map((data) => (
+            <li 
+              key={data.id} 
+              className='min-w-[15.5rem] xl:w-full flex flex-col items-center justify-center gap-2 p-6 px-10 rounded-xl border-[1px] border-gray-200'
+            >
+              <span className='font-[400] text-[14px]'>{data.title}</span>
+              <span className='font-[600] text-[30px]'>{data.amount}</span>
+            </li>
+          ))}
+        </ul>
       </section>
       <section className='bg-white rounded-lg p-8 mt-8'>
         <div className='flex items-center justify-between flex-wrap sm:flex-nowrap'>
