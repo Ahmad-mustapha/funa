@@ -21,7 +21,6 @@ const navLinks = [
   {id: 5, text: 'Payout', icon: <TbTransferIn />, link: '/payout'},
   {id: 6, text: 'Team', icon: <GoPeople />, link: '/team'},
   {id: 7, text: 'Setting', icon: <IoSettingsOutline />, link: '/settings'},
-  // {id: 8, text: 'Log Out', icon: <BiLogOut />, link: '/logout'},
 ]
 
 const Sidebar = () => {
@@ -40,7 +39,9 @@ const Sidebar = () => {
           ><span>{link.icon}</span><Link to={link.link} className='w-full'>{link.text}</Link></li>
         ))}
       </ul>
-      <Link to='/logout' className={`flex items-center gap-2 text-[#2C8CFB] w-full text-[1rem] py-[.4rem] px-3`}> <span><BiLogOut /></span> Log out</Link>
+      <Link 
+      to='/logout' 
+      className={`flex items-center gap-2 text-[#2C8CFB] w-full text-[1rem] py-[.4rem] px-3`}> <span><BiLogOut /></span> Log out</Link>
     </div>
   )
 }
