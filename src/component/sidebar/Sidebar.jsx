@@ -19,7 +19,7 @@ const navLinks = [
   {id: 3, text: 'Users', icon: <CiUser />, link: '/users'},
   {id: 4, text: 'KYC', icon: <CiUser />, link: '/kyc'},
   {id: 5, text: 'Payout', icon: <TbTransferIn />, link: '/payout'},
-  {id: 6, text: 'Team', icon: <GoPeople />, link: '/teaam'},
+  {id: 6, text: 'Team', icon: <GoPeople />, link: '/team'},
   {id: 7, text: 'Setting', icon: <IoSettingsOutline />, link: '/settings'},
   // {id: 8, text: 'Log Out', icon: <BiLogOut />, link: '/logout'},
 ]
