@@ -9,16 +9,6 @@ const summaryData = [
   {id: 3, title: 'Daily Transaction', amount: 'N200,000'}
 ]
 
-// export const Summary = () =>(
-//   <ul className='flex items-center gap-6 justify-center flex-wrap xl:justify-start xl:flex-nowrap'>
-//     {summaryData.map((data, index) =>(
-//       <li key={index} className='min-w-[15.5rem] xl:w-full flex flex-col items-center justify-center gap-2 p-6 px-10 rounded-xl border-[1px] border-gray-200'>
-//         <span className='font-[400] text-[14px]'>{data.title}</span><span className='font-[600] text-[30px]'>{data.amount}</span>
-//       </li>
-//     ))}
-//   </ul>
-// )
-
 
 const Dashboard = () => {
 
