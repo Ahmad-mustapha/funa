@@ -43,7 +43,7 @@ const Dashboard = () => {
         });
 
         setDashboardData(response.data.data);
-        console.log(response.data)
+        console.log(response)
         setLoading(false);
       } catch (err) {
         // setError(err.message);
