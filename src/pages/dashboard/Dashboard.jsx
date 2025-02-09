@@ -46,7 +46,7 @@ const Dashboard = () => {
         console.log(response)
         setLoading(false);
       } catch (err) {
-        // setError(err.message);
+        setError(err.message);
         const errorMessage =
         "Internal Server Error. Please try again later.";
 

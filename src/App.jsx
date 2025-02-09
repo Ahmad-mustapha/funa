@@ -32,7 +32,7 @@ function App() {
       <BrowserRouter>
         <ToastContainer 
           position="top-right"
-          autoClose={3000} // Toast disappears after 3 seconds
+          autoClose={3000} 
           hideProgressBar={false}
           closeOnClick
           pauseOnHover
