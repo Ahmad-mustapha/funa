@@ -23,44 +23,44 @@ const Dashboard = () => {
     canceled_shipment: 0
   });
 
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchDashboardData = async () => {
-      try {
-        const token = localStorage.getItem('accessToken');
+  // useEffect(() => {
+  //   const fetchDashboardData = async () => {
+  //     try {
+  //       const token = localStorage.getItem('accessToken');
         
-        if (!token) {
-          throw new Error('No access token found');
-        }
+  //       if (!token) {
+  //         throw new Error('No access token found');
+  //       }
 
-        const response = await axios.get('https://api.baronsandqueens.com/api/admin/dashboard-overview', {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Accept': 'application/json'
-          }
-        });
+  //       const response = await axios.get('https://api.baronsandqueens.com/api/admin/dashboard-overview', {
+  //         headers: {
+  //           'Authorization': `Bearer ${token}`,
+  //           'Accept': 'application/json'
+  //         }
+  //       });
 
-        setDashboardData(response.data.data);
-        console.log(response)
-        setLoading(false);
-      } catch (err) {
-        setError(err.message);
-        const errorMessage =
-        "Internal Server Error. Please try again later.";
+  //       setDashboardData(response.data.data);
+  //       console.log(response)
+  //       setLoading(false);
+  //     } catch (err) {
+  //       setError(err.message);
+  //       const errorMessage =
+  //       "Internal Server Error. Please try again later.";
 
-        toast.error(errorMessage, {
-        position: "top-right",
-        autoClose: 4000,
-        theme: "colored",
-      });
-        setLoading(false);
-      }
-    };
+  //       toast.error(errorMessage, {
+  //       position: "top-right",
+  //       autoClose: 4000,
+  //       theme: "colored",
+  //     });
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchDashboardData();
-  }, []);
+  //   fetchDashboardData();
+  // }, []);
 
   const summaryData = [
     { 
