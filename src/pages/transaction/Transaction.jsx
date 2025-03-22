@@ -21,6 +21,7 @@ const Transaction = () => {
     has_previous_page: false,
     has_next_page: false
   });
+  const [searchQuery, setSearchQuery] = useState(''); // State for search query
 
   // Fetch transactions when component mounts or pagination changes
   useEffect(() => {
@@ -40,13 +41,18 @@ const Transaction = () => {
             per_page: pagination.per_page,  // Items per page
           },
           headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`,
+            'Accept': 'application/vnd.api+json',
+            'Content-Type': 'application/vnd.api+json',
+            'Authorization': `Bearer ${token}`,
           },
         });
 
+        console.log(response);
+        
         if (response.data.pagination) {
           setTransactions(response.data.data.transactions);
+          console.log(response.data.data);
+          
           setPagination(response.data.pagination);  // Set pagination info from API
         } else {
           setTransactions([]);  // If no pagination info, clear transactions
@@ -79,9 +85,28 @@ const Transaction = () => {
     }));
   };
 
+  // Handle search input change
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  // Filter transactions based on search query
+  const filteredTransactions = transactions.filter((transaction) => {
+    const query = searchQuery.toLowerCase();
+    return (
+      transaction.tx_ref.toLowerCase().includes(query) ||
+      transaction.reference.toLowerCase().includes(query) ||
+      transaction.description.toLowerCase().includes(query) ||
+      transaction.amount.toString().includes(query) ||
+      transaction.status.toLowerCase().includes(query)
+    );
+  });
+  console.log(filteredTransactions);
+  
+
   // Generate page buttons dynamically based on total pages
   const pageButtons = [];
-  for (let i = 1; i <= pagination.total_pages; i++) {
+  for (let i = 1; i <= pagination.last_page; i++) {
     pageButtons.push(
       <button
         key={i}
@@ -102,6 +127,8 @@ const Transaction = () => {
             <input
               placeholder='Search'
               type="text"
+              value={searchQuery}
+              onChange={handleSearchChange}
               className='w-full border-[1px] border-slate-300 rounded-md p-[.3rem] pl-8'
             />
             <FiSearch className='absolute top-2 left-2 text-[1.1rem] font-[600]' />
@@ -120,8 +147,8 @@ const Transaction = () => {
           <p>Loading transactions...</p>
         ) : error ? (
           <p className='text-red-500'>{error}</p>
-        ) : transactions.length === 0 ? (
-          <p className='text-gray-500'>No transactions available.</p>
+        ) : filteredTransactions.length === 0 ? (
+          <p className='text-gray-500'>No transactions found.</p>
         ) : (
           <table className='w-full'>
             <thead>
@@ -134,7 +161,7 @@ const Transaction = () => {
               </tr>
             </thead>
             <tbody>
-              {transactions.map((data, index) => (
+              {filteredTransactions.map((data, index) => (
                 <NavLink
                   key={index}
                   to={`/transaction/${data.id}`}
@@ -179,7 +206,7 @@ const Transaction = () => {
             Next
           </button>
         </div>
-        <span>Page {pagination.current_page} of {pagination.total_pages}</span>
+        <span>Page {pagination.current_page} of {pagination.last_page}</span>
       </section>
     </section>
   );

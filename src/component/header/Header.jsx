@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/funalogo.png'
-import Mainlogo from '../../assets/mainlogo.png'
 import ProfileImage from '../../assets/profileimg.png'
 import { CiSearch } from "react-icons/ci";
 import { FaRegBell } from "react-icons/fa6";
@@ -20,13 +19,14 @@ import { AiOutlineProduct } from "react-icons/ai";
 
 const navLinks = [
   {id: 1, text: 'Dashboard', icon: <MdOutlineDashboard />, link: '/'},
-  {id: 2, text: 'Products', icon: <AiOutlineProduct />, link: '/products'},
-  {id: 2, text: 'Transaction', icon: <TbTransform />, link: '/transaction'},
-  {id: 3, text: 'Users', icon: <CiUser />, link: '/users'},
-  {id: 4, text: 'KYC', icon: <CiUser />, link: '/kyc'},
-  {id: 5, text: 'Payout', icon: <TbTransferIn />, link: '/payout'},
-  {id: 6, text: 'Team', icon: <GoPeople />, link: '/team'},
-  {id: 7, text: 'Setting', icon: <IoSettingsOutline />, link: '/settings'},
+  {id: 2, text: 'Categories', icon: <AiOutlineProduct />, link: '/categories'},
+  {id: 3, text: 'Products', icon: <AiOutlineProduct />, link: '/products'},
+  {id: 4, text: 'Transaction', icon: <TbTransform />, link: '/transaction'},
+  {id: 5, text: 'Users', icon: <CiUser />, link: '/users'},
+  {id: 6, text: 'KYC', icon: <CiUser />, link: '/kyc'},
+  {id: 7, text: 'Payout', icon: <TbTransferIn />, link: '/payout'},
+  {id: 8, text: 'Team', icon: <GoPeople />, link: '/team'},
+  {id: 9, text: 'Setting', icon: <IoSettingsOutline />, link: '/settings'},
   // {id: 8, text: 'Log Out', icon: <BiLogOut />, link: '/logout'},
 ]
 

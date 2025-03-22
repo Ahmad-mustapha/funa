@@ -25,7 +25,7 @@ const Users = () => {
             Authorization: `Bearer ${token}`, // Send authentication token
           },
         });
-        console.log(response.data.data.users)
+        console.log(response.data.data.users);
         setUsers(response.data.data.users); // Set users data
         setLoading(false);
       } catch (err) {
@@ -38,14 +38,24 @@ const Users = () => {
     fetchUsers();
   }, []);
 
-  // Handle loading state
-  if (loading) {
+  // Skeleton Loader Component
+  const SkeletonLoader = () => {
     return (
-      <div className="flex justify-center items-center h-screen">
-        Loading users...
+      <div className="animate-pulse">
+        {[...Array(5)].map((_, index) => (
+          <div key={index} className="flex items-center justify-between gap-3 py-4 w-full text-[12px] border-b">
+            <div className="flex-1 flex gap-2">
+              <div className="bg-gray-200 p-1 px-[5px] rounded-md text-[12px] w-8 h-8"></div>
+              <div className="bg-gray-200 h-4 w-24 rounded"></div>
+            </div>
+            <div className="flex-1 bg-gray-200 h-4 w-32 rounded"></div>
+            <div className="flex-1 bg-gray-200 h-4 w-24 rounded"></div>
+            <div className="flex-1 bg-gray-200 h-6 w-16 rounded"></div>
+          </div>
+        ))}
       </div>
     );
-  }
+  };
 
   // Handle error state
   if (error) {
@@ -85,7 +95,9 @@ const Users = () => {
               </tr>
             </thead>
             <tbody>
-              {users.length > 0 ? (
+              {loading ? (
+                <SkeletonLoader />
+              ) : users.length > 0 ? (
                 users.map((user) => (
                   <tr
                     key={user.id}

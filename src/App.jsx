@@ -18,6 +18,8 @@ import {
   AddTeamMember, 
   Customerdetails, 
   Product, 
+  Categories,
+  Newcategory,
   Login,
   Addnewproduct } from './pages/import'
 
@@ -42,6 +44,7 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path='/' element={<Dashboard />}/>
+            <Route path='/categories' element={<Categories />}/>
             <Route path='/products' element={<Product />}/>
             <Route path='/transaction' element={<Transaction />}/>
             <Route path='/users' element={<Users />}/>
@@ -52,6 +55,7 @@ function App() {
             <Route path='/logout' element={<Logout />}/>
           </Route>
           <Route path='/transaction/:id' element={<Customerdetails />}/>
+          <Route path='/categories/add-new-category' element={<Newcategory />}/>
           <Route path='/products/add-new-product' element={<Addnewproduct />}/>
           <Route path='/transaction/:id/transaction-details' element={<TransactionId />}/>
           <Route path='/users/:id' element={<Userdetails />}/>

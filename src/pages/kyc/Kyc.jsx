@@ -11,7 +11,7 @@ const userData = [
   { id: 1, title: 'Total Subscription', num: 207, image: Total },
   { id: 2, title: 'Approved', num: 207, image: Unverified },
   { id: 3, title: 'Rejected', num: 207, image: Verified },
-  { id: 4, title: 'Rejected', num: 207, image: Pending }
+  { id: 4, title: 'Pending', num: 207, image: Pending }
 
 ]
 

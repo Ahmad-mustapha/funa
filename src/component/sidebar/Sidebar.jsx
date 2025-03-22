@@ -14,13 +14,14 @@ import './sidebar.css'
 
 const navLinks = [
   {id: 1, text: 'Dashboard', icon: <MdOutlineDashboard />, link: '/'},
-  {id: 1, text: 'Product', icon: <AiOutlineProduct />, link: '/products'},
-  {id: 2, text: 'Transaction', icon: <TbTransform />, link: '/transaction'},
-  {id: 3, text: 'Users', icon: <CiUser />, link: '/users'},
-  {id: 4, text: 'KYC', icon: <CiUser />, link: '/kyc'},
-  {id: 5, text: 'Payout', icon: <TbTransferIn />, link: '/payout'},
-  {id: 6, text: 'Team', icon: <GoPeople />, link: '/team'},
-  {id: 7, text: 'Setting', icon: <IoSettingsOutline />, link: '/settings'},
+  {id: 2, text: 'Categories', icon: <AiOutlineProduct />, link: '/categories'},
+  {id: 3, text: 'Product', icon: <AiOutlineProduct />, link: '/products'},
+  {id: 4, text: 'Transaction', icon: <TbTransform />, link: '/transaction'},
+  {id: 5, text: 'Users', icon: <CiUser />, link: '/users'},
+  {id: 6, text: 'KYC', icon: <CiUser />, link: '/kyc'},
+  {id: 7, text: 'Payout', icon: <TbTransferIn />, link: '/payout'},
+  {id: 8, text: 'Team', icon: <GoPeople />, link: '/team'},
+  {id: 9, text: 'Setting', icon: <IoSettingsOutline />, link: '/settings'},
 ]
 
 const Sidebar = () => {
@@ -31,7 +32,7 @@ const Sidebar = () => {
         <div><img src={Profileimage2} alt="" /></div>
         <p className='font-[700] text-[1.3rem]'>Sanni Ahmed</p>
       </div>
-      <ul className='w-full h-full flex flex-col gap-1 mt-4'>
+      <ul className='w-full h-full flex flex-col gap-[3px] mt-4'>
         {navLinks.map((link, index) =>(
           <li 
           key={index}

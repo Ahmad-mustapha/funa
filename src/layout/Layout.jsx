@@ -11,6 +11,9 @@ const Layout = () => {
     case '/':
       headerText = 'Dashboard';
       break;
+    case '/categories':
+      headerText = 'Categories';
+      break;
     case '/products':
       headerText = 'Product';
       break;

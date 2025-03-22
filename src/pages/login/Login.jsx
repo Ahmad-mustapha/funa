@@ -43,6 +43,7 @@ const Login = () => {
         localStorage.setItem("accessToken", response.data.data.access_token);
         localStorage.setItem("refreshToken", response.data.data.refresh_token);
         localStorage.setItem("userData", JSON.stringify(response.data.data.admin));
+        console.log(response.data.data.access_token)
 
         // ✅ Show success toast before navigating
         toast.success("Logged in successfully");
