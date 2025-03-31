@@ -96,7 +96,7 @@ const ActionCell = ({ params }) => {
       </div>
     );
   };
-const Datatable = () => {
+const AllUserTable = () => {
   return (
     <div className="mt-20">
       <DataGrid
@@ -119,4 +119,4 @@ const Datatable = () => {
   );
 };
 
-export default Datatable;
+export default AllUserTable;

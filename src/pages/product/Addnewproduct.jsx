@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa6';
 import { IoCheckmarkCircleOutline } from 'react-icons/io5';
-import axios from 'axios'; // Import Axios
+import axios from 'axios';
+import { uploadImagesToCloudinary } from '@/components/Uploadimage';
 
 const Addnewproduct = () => {
   const [formData, setFormData] = useState({
@@ -35,77 +36,70 @@ const Addnewproduct = () => {
     setFormData({ ...formData, images: files }); // Store the actual files
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
     setSuccess(false);
-  
+
     // Check for required fields
     if (!formData.duration_value || !formData.duration_type) {
       setError('Duration value and type are required.');
       setLoading(false);
       return;
     }
-  
-    // Ensure duration_value is a valid integer
-  const durationValue = parseInt(formData.duration_value, 10);
-  if (isNaN(durationValue)) {
-    setError('Duration value must be a valid integer.');
-    setLoading(false);
-    return;
-  }
 
-  // Ensure duration_type is valid
-  const validDurationTypes = ['days', 'months', 'years'];
-  if (!validDurationTypes.includes(formData.duration_type)) {
-    setError('Duration type must be one of: days, months, years.');
-    setLoading(false);
-    return;
-  }
+    // Ensure duration_value is a valid integer
+    const durationValue = parseInt(formData.duration_value, 10);
+    if (isNaN(durationValue)) {
+      setError('Duration value must be a valid integer.');
+      setLoading(false);
+      return;
+    }
+
+    // Ensure duration_type is valid
+    const validDurationTypes = ['days', 'months', 'years'];
+    if (!validDurationTypes.includes(formData.duration_type)) {
+      setError('Duration type must be one of: days, months, years.');
+      setLoading(false);
+      return;
+    }
 
     // Retrieve token from local storage
     const token = localStorage.getItem('accessToken');
-    console.log(token);
-  
     if (!token) {
       setError('No authentication token found. Please log in.');
       setLoading(false);
       return;
     }
-  
+
     try {
-      // Convert images to base64
-      const imagePromises = formData.images.map((file) => {
-        return new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result);
-          reader.onerror = (error) => reject(error);
-          reader.readAsDataURL(file);
-        });
-      });
-  
-      const base64Images = await Promise.all(imagePromises);
-  
+      // Upload images to Cloudinary (if any)
+      let imageUrls = [];
+      if (formData.images.length > 0) {
+        imageUrls = await uploadImagesToCloudinary(formData.images);
+      }
+
       // Prepare the payload
       const payload = {
-        category_id: formData.category_id, // String (UUID)
-        name: formData.name, // String
-        description: formData.description || null, // String or null
-        unit_price: parseFloat(formData.unit_price), // Number (float)
-        min_units: parseInt(formData.min_units, 10), // Integer
-        max_units: parseInt(formData.max_units, 10), // Integer
-        roi_percentage: parseFloat(formData.roi_percentage), // Number (float)
-        duration_value: parseInt(formData.duration_value, 10), // Integer
-        duration_type: formData.duration_type, // String
-        start_condition: formData.start_condition, // String
-        start_threshold: formData.start_threshold ? parseInt(formData.start_threshold, 10) : null, // Integer or null
-        start_date: formData.start_date || null, // String (date) or null
-        images: JSON.stringify(base64Images), // JSON string of base64 URLs
+        category_id: formData.category_id,
+        name: formData.name,
+        description: formData.description || null,
+        unit_price: parseFloat(formData.unit_price),
+        min_units: parseInt(formData.min_units, 10),
+        max_units: parseInt(formData.max_units, 10),
+        roi_percentage: parseFloat(formData.roi_percentage),
+        duration_value: durationValue,
+        duration_type: formData.duration_type,
+        start_condition: formData.start_condition,
+        start_threshold: formData.start_threshold ? parseInt(formData.start_threshold, 10) : null,
+        start_date: formData.start_date || null,
+        images: imageUrls, // Use the array of Cloudinary URLs directly
       };
-  
+
       console.log('Payload:', payload); // Debugging: Inspect the payload
-  
+
       // Send the request using Axios
       const response = await axios.post(
         'https://api.baronsandqueens.com/api/admin/investment-packages',
@@ -118,7 +112,7 @@ const Addnewproduct = () => {
           },
         }
       );
-  
+
       if (response.status === 200 || response.status === 201) {
         setSuccess(true);
         console.log('Investment created successfully:', response.data);

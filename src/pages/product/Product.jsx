@@ -1,40 +1,53 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiSearch } from 'react-icons/fi';
+import { FiSearch, FiArrowLeft } from 'react-icons/fi';
 import { FaPlus } from 'react-icons/fa6';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { API_BASE_URL } from '../../../constant';
+import { AdvancedImage } from '@cloudinary/react';
+import { Cloudinary } from '@cloudinary/url-gen';
+import { thumbnail } from '@cloudinary/url-gen/actions/resize';
+
+// Initialize Cloudinary instance
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: 'de30l793l' // Replace with your Cloudinary cloud name
+  }
+});
+console.log(cld);
+
 
 const Product = () => {
   const [investmentPackages, setInvestmentPackages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch investment packages from the API
   useEffect(() => {
     const fetchInvestmentPackages = async () => {
       try {
-        const token = localStorage.getItem('accessToken'); // Retrieve token from localStorage
-        if (!token) {
-          throw new Error('No access token found');
-        }
+        const token = localStorage.getItem('accessToken');
+        console.log(token);
+        
+        if (!token) throw new Error('No access token found');
 
         const response = await fetch(`${API_BASE_URL}/investment-packages`, {
           method: 'GET',
           headers: {
-            'Accept': 'application/vnd.api+json',
-            'Content-Type': 'application/vnd.api+json',
-            'Authorization': `Bearer ${token}`, // Include the token in the request
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
           },
         });
 
-        if (!response.ok) {
-          throw new Error('Failed to fetch investment packages');
-        }
+        if (!response.ok) throw new Error('Failed to fetch investment packages');
 
         const data = await response.json();
-        setInvestmentPackages(data.data.data); // Update state with fetched data
+        const packagesData = data.data.data || [];
+        setInvestmentPackages(packagesData);
+        console.log(packagesData);
+        
+        
       } catch (err) {
         setError(err.message);
       } finally {
@@ -46,7 +59,7 @@ const Product = () => {
   }, []);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className="p-4 text-red-500">Error: {error}</div>;
   }
 
   return (
@@ -72,74 +85,78 @@ const Product = () => {
           </div>
         </div>
       </div>
+      
       <section className='mt-6 overflow-x-auto sm:w-full'>
         <table className='w-screen md:w-full'>
           <thead>
-            <tr className='flex staff gap-1 items-center bg-[#F9FBFC] rounded-[100px] px-6 p-[.8rem] border-0'>
-              <th className='staff text-left'></th>
-              <th className='staff text-left'>Investment Title</th>
-              <th className='staff text-left'>Investment Period</th>
-              <th className='staff text-left'>Price Per Investment</th>
-              <th className='staff text-left'>Return On Investment</th>
+            <tr className='flex items-center bg-[#F9FBFC] rounded-[100px] px-6 p-[.8rem] border-0'>
+              <th className='text-left w-24'></th>
+              <th className='text-left flex-1'>Investment Title</th>
+              <th className='text-left flex-1'>Created Date</th>
+              <th className='text-left flex-1'>Price</th>
+              <th className='text-left flex-1'>ROI</th>
             </tr>
           </thead>
           <tbody>
             {loading ? (
-              // Show skeleton loading while data is being fetched
-              Array(investmentPackages.length || 2) // Use the length of investmentPackages or default to 5
-                .fill(0)
-                .map((_, index) => (
-                  <tr key={index} className='flex items-center gap-1 py-4 w-full text-[12px] px-2 sm:px-6'>
-                    <td className='staff'>
-                      <div className='w-24'>
-                        <Skeleton height={100} /> {/* Image placeholder */}
-                      </div>
-                    </td>
-                    <td className='flex gap-2 staff'>
-                      <Skeleton circle width={24} height={24} /> {/* Circle for initial letter */}
-                      <Skeleton width={100} /> {/* Investment title */}
-                    </td>
-                    <td className='staff'>
-                      <Skeleton width={100} /> {/* Investment period */}
-                    </td>
-                    <td className='staff'>
-                      <Skeleton width={100} /> {/* Price per investment */}
-                    </td>
-                    <td className='staff'>
-                      <Skeleton width={100} /> {/* Return on investment */}
-                    </td>
-                  </tr>
-                ))
+              Array(4).fill(0).map((_, index) => (
+                <tr key={index} className='flex items-center gap-1 py-4 w-full text-[12px] px-2 sm:px-6'>
+                  <td className='w-24'>
+                    <Skeleton height={60} width={60} />
+                  </td>
+                  <td className='flex gap-2 flex-1'>
+                    <Skeleton circle width={24} height={24} />
+                    <Skeleton width={100} />
+                  </td>
+                  <td className='flex-1'>
+                    <Skeleton width={80} />
+                  </td>
+                  <td className='flex-1'>
+                    <Skeleton width={80} />
+                  </td>
+                  <td className='flex-1'>
+                    <Skeleton width={80} />
+                  </td>
+                </tr>
+              ))
             ) : (
-              // Show actual data when loaded
-              investmentPackages.map((investment) => {
-                // Extract the first image URL from the image array
-                const imageUrl = investment.image && JSON.parse(investment.image)[0];
-
-                return (
-                  <tr key={investment.id} className='flex items-center gap-1 py-4 w-full text-[12px] px-2 sm:px-6'>
-                    <td className='staff'>
-                      <div className='w-24'>
-                        {/* Display the dynamic image */}
-                        <img 
-                          src={imageUrl || 'https://via.placeholder.com/100'} // Fallback image if no URL is found
-                          alt={investment.name} 
-                          className='w-full h-auto rounded-md'
-                        />
+              investmentPackages.map((investment) => (
+                <tr key={investment.id} className='group'>
+                  <Link to={`/products/${investment.id}`} className='flex items-center gap-1 py-4 w-full text-[12px] px-2 sm:px-6'>
+                    <td className='w-24'>
+                      <div className='w-16 h-16 rounded-md overflow-hidden bg-gray-100 flex items-center justify-center'>
+                        {investment.image_urls?.length > 0 ? (
+                          <AdvancedImage
+                            cldImg={cld.image(investment.image_urls[0])
+                              .resize(thumbnail().width(64).height(64))}
+                            alt={investment.name}
+                            className='w-full h-full object-cover'
+                          />
+                        ) : (
+                          <div className="text-gray-400 text-xs text-center p-2">
+                            No Image
+                          </div>
+                        )}
                       </div>
                     </td>
-                    <td className='flex gap-2 staff'>
-                      <span className='bg-[#2C8CFB] p-1 px-[5px] h-[1.7rem] rounded-md text-[12px]'>
+                    <td className='flex gap-2 items-center flex-1'>
+                      <span className='bg-[#2C8CFB] p-1 px-[5px] h-[1.7rem] rounded-md text-[12px] text-white'>
                         {investment.name.charAt(0)}
                       </span>
                       {investment.name}
                     </td>
-                    <td className='staff'>{investment.duration_value} {investment.duration_type}</td>
-                    <td className='staff'>${investment.unit_price}</td>
-                    <td className='staff'>{investment.roi_percentage}%</td>
-                  </tr>
-                );
-              })
+                    <td className='flex-1'>
+                      {new Date(investment.created_at).toLocaleDateString()}
+                    </td>
+                    <td className='flex-1'>
+                      ₦{parseFloat(investment.unit_price).toLocaleString()}
+                    </td>
+                    <td className='flex-1'>
+                      {investment.roi_percentage}%
+                    </td>
+                  </Link>
+                </tr>
+              ))
             )}
           </tbody>
         </table>

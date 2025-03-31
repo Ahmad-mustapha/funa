@@ -23,6 +23,8 @@ import {
   Login,
   Addnewproduct } from './pages/import'
 
+import ProductDetails from './pages/product/productdetails'
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -55,6 +57,7 @@ function App() {
             <Route path='/logout' element={<Logout />}/>
           </Route>
           <Route path='/transaction/:id' element={<Customerdetails />}/>
+          <Route path='/products/:id' element={<ProductDetails />}/>
           <Route path='/categories/add-new-category' element={<Newcategory />}/>
           <Route path='/products/add-new-product' element={<Addnewproduct />}/>
           <Route path='/transaction/:id/transaction-details' element={<TransactionId />}/>

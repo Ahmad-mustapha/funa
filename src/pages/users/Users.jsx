@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Userstats } from "../kyc/Stat";
 
 const Users = () => {
   const [users, setUsers] = useState([]); // Store API data
@@ -68,8 +69,9 @@ const Users = () => {
 
   return (
     <div>
+      <Userstats />
       <section className="mt-6 bg-white rounded-xl p-8 px-10">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <p className="text-[1.3rem] font-[600] mb-4">User History</p>
           <div className="flex items-center gap-3">
             <div className="relative w-[250px]">
