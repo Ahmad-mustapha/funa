@@ -4,7 +4,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 import { IoCheckmarkCircleOutline } from 'react-icons/io5';
 import axios from 'axios';
 import { API_BASE_URL } from '../../../constant';
-import { UpdateProduct } from './UpdateProduct';
+import { UpdateProduct } from './Updateproduct';
 import { ProductdetailsSkeleton } from '@/components/skeletons';
 import { toast } from 'react-toastify';
 
