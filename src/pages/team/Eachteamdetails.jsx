@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FiX, FiEdit, FiTrash2 } from 'react-icons/fi';
 import axios from 'axios';
-import UpdateTeam from './UpdateTeam';
+import UpdateTeam from './Updateteam';
 
 const Eachteamdetails = ({ staffId, closeModal, initialData, onUpdate }) => {
   const [staffData, setStaffData] = useState(initialData);
